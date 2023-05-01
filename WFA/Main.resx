@@ -57,4 +57,222 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbTeams.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 36</value>
+  </data>
+  <data name="cbTeams.Size" type="System.Drawing.Size, System.Drawing">
+    <value>395, 28</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbTeams.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbTeams.Text" xml:space="preserve">
+    <value>Choose your favourite team</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.Name" xml:space="preserve">
+    <value>cbTeams</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="flpPlayers.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flpPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 137</value>
+  </data>
+  <data name="flpPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>737, 604</value>
+  </data>
+  <data name="flpPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;flpPlayers.Name" xml:space="preserve">
+    <value>flpPlayers</value>
+  </data>
+  <data name="&gt;&gt;flpPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpPlayers.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpPlayers.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="flwFavPlayer.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flwFavPlayer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>934, 137</value>
+  </data>
+  <data name="flwFavPlayer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>754, 604</value>
+  </data>
+  <data name="flwFavPlayer.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;flwFavPlayer.Name" xml:space="preserve">
+    <value>flwFavPlayer</value>
+  </data>
+  <data name="&gt;&gt;flwFavPlayer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flwFavPlayer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flwFavPlayer.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblPlayers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 98</value>
+  </data>
+  <data name="lblPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
+  </data>
+  <data name="lblPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblPlayers.Text" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="&gt;&gt;lblPlayers.Name" xml:space="preserve">
+    <value>lblPlayers</value>
+  </data>
+  <data name="&gt;&gt;lblPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPlayers.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblPlayers.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblFavPlayers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFavPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>934, 98</value>
+  </data>
+  <data name="lblFavPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 20</value>
+  </data>
+  <data name="lblFavPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblFavPlayers.Text" xml:space="preserve">
+    <value>Favourite players</value>
+  </data>
+  <data name="&gt;&gt;lblFavPlayers.Name" xml:space="preserve">
+    <value>lblFavPlayers</value>
+  </data>
+  <data name="&gt;&gt;lblFavPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFavPlayers.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblFavPlayers.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnRank.Location" type="System.Drawing.Point, System.Drawing">
+    <value>799, 433</value>
+  </data>
+  <data name="btnRank.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 88</value>
+  </data>
+  <data name="btnRank.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnRank.Text" xml:space="preserve">
+    <value>Rank</value>
+  </data>
+  <data name="&gt;&gt;btnRank.Name" xml:space="preserve">
+    <value>btnRank</value>
+  </data>
+  <data name="&gt;&gt;btnRank.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRank.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnRank.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>934, 25</value>
+  </data>
+  <data name="lblInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 20</value>
+  </data>
+  <data name="lblInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Name" xml:space="preserve">
+    <value>lblInfo</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btncClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>799, 536</value>
+  </data>
+  <data name="btncClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 88</value>
+  </data>
+  <data name="btncClose.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btncClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="&gt;&gt;btncClose.Name" xml:space="preserve">
+    <value>btncClose</value>
+  </data>
+  <data name="&gt;&gt;btncClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btncClose.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btncClose.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1700, 753</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

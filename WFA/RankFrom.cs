@@ -22,11 +22,13 @@ namespace WFA
 
         public RankFrom()
         {
+            SetSettings.SetCulture(File.ReadLines(Constants.PREF_LANG).FirstOrDefault());
             InitializeComponent();
         }
 
         public RankFrom(object country, object fifaCode)
         {
+            SetSettings.SetCulture(File.ReadLines(Constants.PREF_LANG).FirstOrDefault());
             InitializeComponent();
             SelectedCountry = country;
             SelectedFifaCode = fifaCode;

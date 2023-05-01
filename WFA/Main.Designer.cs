@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             cbTeams = new ComboBox();
             flpPlayers = new FlowLayoutPanel();
             flwFavPlayer = new FlowLayoutPanel();
@@ -41,86 +42,59 @@
             // cbTeams
             // 
             cbTeams.FormattingEnabled = true;
-            cbTeams.Location = new Point(29, 36);
+            resources.ApplyResources(cbTeams, "cbTeams");
             cbTeams.Name = "cbTeams";
-            cbTeams.Size = new Size(395, 28);
-            cbTeams.TabIndex = 0;
-            cbTeams.Text = "Choose your favourite team";
             cbTeams.SelectedIndexChanged += cbTeams_SelectedIndexChanged;
             // 
             // flpPlayers
             // 
             flpPlayers.AllowDrop = true;
-            flpPlayers.AutoScroll = true;
-            flpPlayers.Location = new Point(29, 137);
+            resources.ApplyResources(flpPlayers, "flpPlayers");
             flpPlayers.Name = "flpPlayers";
-            flpPlayers.Size = new Size(737, 604);
-            flpPlayers.TabIndex = 1;
             flpPlayers.DragDrop += flpPlayers_DragDrop;
             flpPlayers.DragOver += flpPlayers_DragOver;
             // 
             // flwFavPlayer
             // 
             flwFavPlayer.AllowDrop = true;
-            flwFavPlayer.AutoScroll = true;
-            flwFavPlayer.Location = new Point(934, 137);
+            resources.ApplyResources(flwFavPlayer, "flwFavPlayer");
             flwFavPlayer.Name = "flwFavPlayer";
-            flwFavPlayer.Size = new Size(754, 604);
-            flwFavPlayer.TabIndex = 2;
             flwFavPlayer.DragDrop += flwFavPlayer_DragDrop;
             flwFavPlayer.DragOver += flwFavPlayer_DragOver;
             // 
             // lblPlayers
             // 
-            lblPlayers.AutoSize = true;
-            lblPlayers.Location = new Point(29, 98);
+            resources.ApplyResources(lblPlayers, "lblPlayers");
             lblPlayers.Name = "lblPlayers";
-            lblPlayers.Size = new Size(55, 20);
-            lblPlayers.TabIndex = 3;
-            lblPlayers.Text = "Players";
             // 
             // lblFavPlayers
             // 
-            lblFavPlayers.AutoSize = true;
-            lblFavPlayers.Location = new Point(934, 98);
+            resources.ApplyResources(lblFavPlayers, "lblFavPlayers");
             lblFavPlayers.Name = "lblFavPlayers";
-            lblFavPlayers.Size = new Size(120, 20);
-            lblFavPlayers.TabIndex = 4;
-            lblFavPlayers.Text = "Favourite players";
             // 
             // btnRank
             // 
-            btnRank.Location = new Point(799, 433);
+            resources.ApplyResources(btnRank, "btnRank");
             btnRank.Name = "btnRank";
-            btnRank.Size = new Size(94, 88);
-            btnRank.TabIndex = 5;
-            btnRank.Text = "Rank";
             btnRank.UseVisualStyleBackColor = true;
             btnRank.Click += btnRank_Click;
             // 
             // lblInfo
             // 
-            lblInfo.AutoSize = true;
-            lblInfo.Location = new Point(934, 25);
+            resources.ApplyResources(lblInfo, "lblInfo");
             lblInfo.Name = "lblInfo";
-            lblInfo.Size = new Size(0, 20);
-            lblInfo.TabIndex = 6;
             // 
             // btncClose
             // 
-            btncClose.Location = new Point(799, 536);
+            resources.ApplyResources(btncClose, "btncClose");
             btncClose.Name = "btncClose";
-            btncClose.Size = new Size(94, 88);
-            btncClose.TabIndex = 7;
-            btncClose.Text = "Close";
             btncClose.UseVisualStyleBackColor = true;
             btncClose.Click += btncClose_Click;
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1700, 753);
             Controls.Add(btncClose);
             Controls.Add(lblInfo);
             Controls.Add(btnRank);
@@ -130,7 +104,6 @@
             Controls.Add(flpPlayers);
             Controls.Add(cbTeams);
             Name = "Main";
-            Text = "Main";
             Load += Main_Load;
             ResumeLayout(false);
             PerformLayout();

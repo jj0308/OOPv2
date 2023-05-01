@@ -21,11 +21,13 @@ namespace WFA
         public bool SelectedPlayer { get; set; }
         public PlayerControl()
         {
+            SetSettings.SetCulture(File.ReadLines(DAL.Constants.Constants.PREF_LANG).FirstOrDefault());
             InitializeComponent();
         }
 
         public PlayerControl(Player player)
         {
+            SetSettings.SetCulture(File.ReadLines(DAL.Constants.Constants.PREF_LANG).FirstOrDefault());
             InitializeComponent();
             _player = player;
             lblName.Text = player.Name;

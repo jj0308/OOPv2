@@ -16,7 +16,9 @@ namespace WFA
         string favoritePlayersFile;
         public Main()
         {
+            
             CheckIfSettingsFileExists();
+            SetSettings.SetCulture(File.ReadLines(Constants.PREF_LANG).FirstOrDefault());
             InitializeComponent();
         }
 
@@ -32,8 +34,8 @@ namespace WFA
 
         private async void Main_Load(object sender, EventArgs e)
         {
-            SetSettings.SetCulture(File.ReadLines(Constants.PREF_LANG).FirstOrDefault());
-
+            
+         
             btnRank.Enabled = false;
 
 

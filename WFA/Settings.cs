@@ -16,6 +16,7 @@ namespace WFA
     {
         public Settings()
         {
+            SetSettings.SetCulture(File.ReadLines(Constants.PREF_LANG).FirstOrDefault());
             InitializeComponent();
         }
 
