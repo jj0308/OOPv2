@@ -1,0 +1,142 @@
+﻿<Window x:Class="WPF.PlayerInfor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="PlayerInfo"
+        Height="400"
+        Width="300">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                <GradientStop Color="#015086" Offset="0.0" />
+                <GradientStop Color="#12c368" Offset="0.25" />
+                <GradientStop Color="#017e90" Offset="0.75" />
+                <GradientStop Color="#8ae423" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            x:Name="playerImage"
+            Source="/Image/male_player.png"
+            Margin="0,10,0,0"
+            />
+        <Label
+            x:Name="lblShirtName"
+            Grid.Row="0"
+            Content="99"
+            FontSize="40"
+            FontWeight="DemiBold"
+            Foreground="White"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Left"
+            Margin="20"
+            Width="auto"
+            />
+
+        <Label
+            x:Name="lblPlayerName"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Content="player name"
+            FontSize="25"
+            Foreground="White"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center"
+            Width="auto"
+            />
+
+        <Label
+            x:Name="lblCaptainText"            
+            Grid.Row="2"
+            Content="CAPITAN:"
+            FontSize="14"
+            Foreground="White"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            />
+
+        <Label
+            Name="lblGoalsText"
+            Grid.Row="3"
+            Content="GOALS:"
+            FontSize="14"
+            Foreground="White"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            />
+
+        <Label
+            x:Name="lblYellowCardsText"
+            Grid.Row="4"
+            Content="YELLOWCARDS:"
+            FontSize="14"
+            Foreground="White"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            />
+
+        <Label
+            x:Name="lblCaptain"
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="DA"
+            FontSize="14"
+            Foreground="White"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            />
+
+        <Label
+            x:Name="lblGoals"
+            Grid.Row="3"
+            Grid.Column="1"
+            Content="0"
+            FontSize="14"
+            Foreground="White"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            />
+
+        <Label
+            x:Name="lblYellowCard"
+            Grid.Row="4"
+            Grid.Column="1"
+            Content="0"
+            FontSize="14"
+            Foreground="White"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            />
+
+
+        <Button
+            x:Name="btnClose"
+            Grid.Column="1"
+            Grid.Row="5"
+            Content="CLOSE"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Padding="20, 2" Click="btnClose_Click"
+            />
+    </Grid>
+</Window>

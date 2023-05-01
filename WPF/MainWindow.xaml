@@ -1,0 +1,226 @@
+﻿<Window x:Class="WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        xmlns:lang="clr-namespace:WPF"
+        mc:Ignorable="d"
+        ContentRendered="Window_ContentRendered"
+        Title="MainWindow"
+        Height="600"
+        Width="800"
+        WindowStyle="ThreeDBorderWindow" 
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,1.1" EndPoint="1,1.5">
+                <GradientStop Color="#015086" Offset="0.0" />
+                <GradientStop Color="#12c368" Offset="0.25" />
+                <GradientStop Color="#017e90" Offset="0.75" />
+                <GradientStop Color="#8ae423" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+      
+
+        <Border  Grid.Row="3" Grid.ColumnSpan="8" Background="#0C2740" />
+   
+        <Image Source="Images/field.png" Grid.Row="2" Grid.ColumnSpan="8" Stretch="Fill"/>
+        <ComboBox 
+            x:Name="cbHomeTeam"
+            Grid.Column="2"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Center"
+            FontSize="15"
+            FontWeight="Medium"
+            Margin="0,0,20,0"
+            SelectionChanged="cbHomeTeam_SelectionChanged"
+            />
+
+        <Button
+            x:Name="btnInfoHomeTeam"
+            Grid.Column="1"
+            Content="info"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Padding="20, 2" Click="BtnInfoHomeTeam_Click"
+            />
+
+        <Label
+            x:Name="lblHomeGoals"
+            Content="0"
+            Grid.Row="1"
+            Grid.Column="3"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="38"
+            FontWeight="Bold"
+            Foreground="White"
+            />
+
+        <Label
+            Content=":"
+            Grid.Row="1"
+            Grid.Column="3"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="20"
+            FontWeight="UltraBold"
+            Foreground="White"
+            />
+
+        <Label
+            x:Name="lblAwayGoals"
+            Content="0"
+            Grid.Row="1"
+            Grid.Column="4"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="38"
+            FontWeight="Bold"
+            Foreground="White"
+            />
+
+        <Button
+            x:Name="btnInfoGuestsTeam"
+            Grid.Column="6"
+            Content="info"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Padding="20, 2" Click="btnInfoGuestsTeam_Click"
+            />
+
+        <ComboBox 
+            x:Name="cbAwayTeam"
+            Grid.Column="4"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Center"
+            Margin="20,0,0,0"
+            FontSize="15"
+            FontWeight="Medium"
+            IsEditable="True"
+            IsReadOnly="True"
+            Text="cbAwayTeam"
+            HorizontalContentAlignment="Right"
+            SelectionChanged="cbAwayTeam_SelectionChanged"
+            />
+
+        <StackPanel
+            Name="spGoalkeeperHome"
+            Grid.Row="2"
+            Grid.Column="0"
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            />
+
+        <StackPanel
+            Name="spDefenderHome"
+            Grid.Row="2"
+            Grid.Column="1"
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            />
+
+        <StackPanel
+            Name="spMidfielderHome"
+            Grid.Row="2"
+            Grid.Column="2"
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            />
+
+        <StackPanel
+            Name="spForwardHome"
+            Grid.Row="2"
+            Grid.Column="3"
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            />
+
+        <StackPanel
+            Name="spForwardGuests"
+            Grid.Row="2"
+            Grid.Column="4"
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            />
+
+        <StackPanel
+            Name="spMidfielderGuests"
+            Grid.Row="2"
+            Grid.Column="5"
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            />
+
+        <StackPanel
+            Name="spDefenderGuests"
+            Grid.Row="2"
+            Grid.Column="6"
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            />
+
+        <StackPanel
+            Name="spGoalkeeperGuests"
+            Grid.Row="2"
+            Grid.Column="7"
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            />
+
+        <Label
+            x:Name="lblInfo"
+            Grid.Row="3"
+            Grid.ColumnSpan="3" 
+            Margin="5,6,0,7" 
+            Width="292"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Foreground="White" 
+            />
+
+        <Button
+            x:Name="btnSettings"
+            Grid.Row="0"
+            Grid.Column="7"
+            Content="btnSettings"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Padding="20, 2" Click="btnSettings_Click"
+            />
+
+        <Button
+            x:Name="btnClose"
+            Grid.Row="3"
+            Grid.Column="67"
+            Content="btnClose"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Padding="20, 2" 
+            Click="btnClose_Click"
+            />
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,778 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="changeSettingsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+C</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="changeSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 26</value>
+  </data>
+  <data name="changeSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Promijeni postavke</value>
+  </data>
+  <data name="saveSettingsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+S</value>
+  </data>
+  <data name="saveSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 26</value>
+  </data>
+  <data name="saveSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Spremi postavke</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 24</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Postavke</value>
+  </data>
+  <data name="printToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="printToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 26</value>
+  </data>
+  <data name="printToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="printToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 24</value>
+  </data>
+  <data name="printToolStripMenuItem.Text" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 28</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlPlayers.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pnlPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 171</value>
+  </data>
+  <data name="pnlPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>793, 308</value>
+  </data>
+  <data name="pnlPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;pnlPlayers.Name" xml:space="preserve">
+    <value>pnlPlayers</value>
+  </data>
+  <data name="&gt;&gt;pnlPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlPlayers.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;pnlPlayers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbYCDDesc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbYCDDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>585, 26</value>
+  </data>
+  <data name="rbYCDDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 24</value>
+  </data>
+  <data name="rbYCDDesc.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="rbYCDDesc.Text" xml:space="preserve">
+    <value>Zuti kartoni padajuce</value>
+  </data>
+  <data name="&gt;&gt;rbYCDDesc.Name" xml:space="preserve">
+    <value>rbYCDDesc</value>
+  </data>
+  <data name="&gt;&gt;rbYCDDesc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbYCDDesc.Parent" xml:space="preserve">
+    <value>gbGoals</value>
+  </data>
+  <data name="&gt;&gt;rbYCDDesc.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbYcAsc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbYcAsc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>393, 26</value>
+  </data>
+  <data name="rbYcAsc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 24</value>
+  </data>
+  <data name="rbYcAsc.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="rbYcAsc.Text" xml:space="preserve">
+    <value>Zuti kartoni rastuce</value>
+  </data>
+  <data name="&gt;&gt;rbYcAsc.Name" xml:space="preserve">
+    <value>rbYcAsc</value>
+  </data>
+  <data name="&gt;&gt;rbYcAsc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbYcAsc.Parent" xml:space="preserve">
+    <value>gbGoals</value>
+  </data>
+  <data name="&gt;&gt;rbYcAsc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbGoalsAsc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbGoalsAsc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 26</value>
+  </data>
+  <data name="rbGoalsAsc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 24</value>
+  </data>
+  <data name="rbGoalsAsc.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="rbGoalsAsc.Text" xml:space="preserve">
+    <value>Golovi rastuce</value>
+  </data>
+  <data name="&gt;&gt;rbGoalsAsc.Name" xml:space="preserve">
+    <value>rbGoalsAsc</value>
+  </data>
+  <data name="&gt;&gt;rbGoalsAsc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbGoalsAsc.Parent" xml:space="preserve">
+    <value>gbGoals</value>
+  </data>
+  <data name="&gt;&gt;rbGoalsAsc.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rbGoalsDesc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbGoalsDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 25</value>
+  </data>
+  <data name="rbGoalsDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 24</value>
+  </data>
+  <data name="rbGoalsDesc.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="rbGoalsDesc.Text" xml:space="preserve">
+    <value>Golovi padajuce</value>
+  </data>
+  <data name="&gt;&gt;rbGoalsDesc.Name" xml:space="preserve">
+    <value>rbGoalsDesc</value>
+  </data>
+  <data name="&gt;&gt;rbGoalsDesc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbGoalsDesc.Parent" xml:space="preserve">
+    <value>gbGoals</value>
+  </data>
+  <data name="&gt;&gt;rbGoalsDesc.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gbGoals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 33</value>
+  </data>
+  <data name="gbGoals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>775, 62</value>
+  </data>
+  <data name="gbGoals.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="gbGoals.Text" xml:space="preserve">
+    <value>Sortiraj prema</value>
+  </data>
+  <data name="&gt;&gt;gbGoals.Name" xml:space="preserve">
+    <value>gbGoals</value>
+  </data>
+  <data name="&gt;&gt;gbGoals.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbGoals.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;gbGoals.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblYellowCards.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblYellowCards.Location" type="System.Drawing.Point, System.Drawing">
+    <value>670, 132</value>
+  </data>
+  <data name="lblYellowCards.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="lblYellowCards.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblYellowCards.Text" xml:space="preserve">
+    <value>Zuti kartoni</value>
+  </data>
+  <data name="&gt;&gt;lblYellowCards.Name" xml:space="preserve">
+    <value>lblYellowCards</value>
+  </data>
+  <data name="&gt;&gt;lblYellowCards.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblYellowCards.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;lblYellowCards.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblScoredGoals.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblScoredGoals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>503, 132</value>
+  </data>
+  <data name="lblScoredGoals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 20</value>
+  </data>
+  <data name="lblScoredGoals.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblScoredGoals.Text" xml:space="preserve">
+    <value>Zabijeni Golovi</value>
+  </data>
+  <data name="&gt;&gt;lblScoredGoals.Name" xml:space="preserve">
+    <value>lblScoredGoals</value>
+  </data>
+  <data name="&gt;&gt;lblScoredGoals.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScoredGoals.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;lblScoredGoals.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblApperiance.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblApperiance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>378, 132</value>
+  </data>
+  <data name="lblApperiance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="lblApperiance.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblApperiance.Text" xml:space="preserve">
+    <value>Nastupi</value>
+  </data>
+  <data name="&gt;&gt;lblApperiance.Name" xml:space="preserve">
+    <value>lblApperiance</value>
+  </data>
+  <data name="&gt;&gt;lblApperiance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblApperiance.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;lblApperiance.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 132</value>
+  </data>
+  <data name="lblName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 20</value>
+  </data>
+  <data name="lblName.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="&gt;&gt;lblName.Name" xml:space="preserve">
+    <value>lblName</value>
+  </data>
+  <data name="&gt;&gt;lblName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblSortPlayers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSortPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 58</value>
+  </data>
+  <data name="lblSortPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 20</value>
+  </data>
+  <data name="lblSortPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblSortPlayers.Name" xml:space="preserve">
+    <value>lblSortPlayers</value>
+  </data>
+  <data name="&gt;&gt;lblSortPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSortPlayers.Parent" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;lblSortPlayers.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tabPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPlayers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>792, 482</value>
+  </data>
+  <data name="tabPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPlayers.Text" xml:space="preserve">
+    <value>Igraci</value>
+  </data>
+  <data name="&gt;&gt;tabPlayers.Name" xml:space="preserve">
+    <value>tabPlayers</value>
+  </data>
+  <data name="&gt;&gt;tabPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPlayers.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPlayers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlMatches.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pnlMatches.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 130</value>
+  </data>
+  <data name="pnlMatches.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 352</value>
+  </data>
+  <data name="pnlMatches.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;pnlMatches.Name" xml:space="preserve">
+    <value>pnlMatches</value>
+  </data>
+  <data name="&gt;&gt;pnlMatches.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlMatches.Parent" xml:space="preserve">
+    <value>tabMatches</value>
+  </data>
+  <data name="&gt;&gt;pnlMatches.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>689, 75</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Gostujuci tim</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabMatches</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>522, 75</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 20</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Domaci tim</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>tabMatches</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>397, 75</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 20</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Posjecenost</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tabMatches</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 75</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 20</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Lokacija</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tabMatches</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="rbAudienceAsc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbAudienceAsc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 26</value>
+  </data>
+  <data name="rbAudienceAsc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 24</value>
+  </data>
+  <data name="rbAudienceAsc.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="rbAudienceAsc.Text" xml:space="preserve">
+    <value>Rasuce</value>
+  </data>
+  <data name="&gt;&gt;rbAudienceAsc.Name" xml:space="preserve">
+    <value>rbAudienceAsc</value>
+  </data>
+  <data name="&gt;&gt;rbAudienceAsc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbAudienceAsc.Parent" xml:space="preserve">
+    <value>gbAudience</value>
+  </data>
+  <data name="&gt;&gt;rbAudienceAsc.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbAudienceDesc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbAudienceDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 26</value>
+  </data>
+  <data name="rbAudienceDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 24</value>
+  </data>
+  <data name="rbAudienceDesc.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="rbAudienceDesc.Text" xml:space="preserve">
+    <value>Padajuce</value>
+  </data>
+  <data name="&gt;&gt;rbAudienceDesc.Name" xml:space="preserve">
+    <value>rbAudienceDesc</value>
+  </data>
+  <data name="&gt;&gt;rbAudienceDesc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbAudienceDesc.Parent" xml:space="preserve">
+    <value>gbAudience</value>
+  </data>
+  <data name="&gt;&gt;rbAudienceDesc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbAudience.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 6</value>
+  </data>
+  <data name="gbAudience.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 71</value>
+  </data>
+  <data name="gbAudience.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="gbAudience.Text" xml:space="preserve">
+    <value>Dolaznost</value>
+  </data>
+  <data name="&gt;&gt;gbAudience.Name" xml:space="preserve">
+    <value>gbAudience</value>
+  </data>
+  <data name="&gt;&gt;gbAudience.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbAudience.Parent" xml:space="preserve">
+    <value>tabMatches</value>
+  </data>
+  <data name="&gt;&gt;gbAudience.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblSortMatches.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSortMatches.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 3</value>
+  </data>
+  <data name="lblSortMatches.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 20</value>
+  </data>
+  <data name="lblSortMatches.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblSortMatches.Text" xml:space="preserve">
+    <value>Sortiraj prema:</value>
+  </data>
+  <data name="&gt;&gt;lblSortMatches.Name" xml:space="preserve">
+    <value>lblSortMatches</value>
+  </data>
+  <data name="&gt;&gt;lblSortMatches.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSortMatches.Parent" xml:space="preserve">
+    <value>tabMatches</value>
+  </data>
+  <data name="&gt;&gt;lblSortMatches.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tabMatches.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="tabMatches.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabMatches.Size" type="System.Drawing.Size, System.Drawing">
+    <value>792, 482</value>
+  </data>
+  <data name="tabMatches.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabMatches.Text" xml:space="preserve">
+    <value>Utakmice</value>
+  </data>
+  <data name="&gt;&gt;tabMatches.Name" xml:space="preserve">
+    <value>tabMatches</value>
+  </data>
+  <data name="&gt;&gt;tabMatches.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabMatches.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabMatches.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 31</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 515</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 541</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Rank From</value>
+  </data>
+  <data name="&gt;&gt;settingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>settingsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;changeSettingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>changeSettingsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;changeSettingsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveSettingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>saveSettingsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;saveSettingsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;printToolStripMenuItem.Name" xml:space="preserve">
+    <value>printToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;printToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;printToolStripMenuItem1.Name" xml:space="preserve">
+    <value>printToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;printToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>RankFrom</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
