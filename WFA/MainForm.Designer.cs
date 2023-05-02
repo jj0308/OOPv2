@@ -1,6 +1,6 @@
 ﻿namespace WFA
 {
-    partial class Main
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             cbTeams = new ComboBox();
             flpPlayers = new FlowLayoutPanel();
             flwFavPlayer = new FlowLayoutPanel();

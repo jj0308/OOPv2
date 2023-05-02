@@ -12,46 +12,48 @@ using System.Windows.Forms;
 
 namespace WFA
 {
+   
     public partial class Settings : Form
     {
+        private DialogResult messageBoxResult;
         public Settings()
         {
-            SetSettings.SetCulture(File.ReadLines(Constants.PREF_LANG).FirstOrDefault());
+
+          
+            
             InitializeComponent();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (rbMale.Checked)
+            messageBoxResult = MessageBox.Show("Are you sure you want this selection?", "Confirmation of selection", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+
+            if (messageBoxResult == DialogResult.OK)
             {
-                SetSettings.settings.Gender = Constants.MEN;
-                SaveToFile(Constants.MEN, Constants.PREF_CHAMP);
-               
-            }
-            else if (rbFemale.Checked)
-            {
-                SetSettings.settings.Gender = Constants.WOMEN;
-                SaveToFile(Constants.WOMEN, Constants.PREF_CHAMP);
+                SetAndSaveGender(rbMale.Checked ? Constants.MEN : Constants.WOMEN);
+                SetAndSaveLanguage(rbCRO.Checked ? Constants.HR : Constants.EN);
+
+                MainForm main = new MainForm();
+                main.Show();
+                this.Close();
             }
 
-            if (rbCRO.Checked)
-            {
-                SetLanguageAndCulture(Constants.HR);
-                SaveToFile(Constants.HR, Constants.PREF_LANG);
-                SetSettings.SetCulture(Constants.HR);
-            }
-            else if (rbEng.Checked)
-            {
-                SetLanguageAndCulture(Constants.EN);
-                SaveToFile(Constants.EN, Constants.PREF_CHAMP);
-                SetSettings.SetCulture(Constants.EN);
-            }
 
-            this.Hide();
-            Main main = new Main();
-            main.Show();
-            this.Close();
+        }
 
+
+        private void SetAndSaveGender(string gender)
+        {
+            SetSettings.settings.Gender = gender;
+            SaveToFile(gender, Constants.PREF_CHAMP);
+        }
+
+        private void SetAndSaveLanguage(string language)
+        {
+            SetLanguageAndCulture(language);
+            SaveToFile(language, Constants.PREF_LANG);
+            SetSettings.SetCulture(language);
         }
 
         private void SaveToFile(string msg, string file)

@@ -40,10 +40,10 @@ namespace DAL.Constants
 
         //WPF
         public const string PREF_RESOLUTION = @"../../Files/resolution.txt";
-        public const string PREF_LANG_WPF = @"\WFA\bin\Files\pref_lang.txt";
-        public const string PREF_CUP_WPF = @"\WFA\bin\Files\pref_cup.txt";
-        public const string FAVTEAM_MEN_WPF = @"\WFA\bin\Files\favTeamMen.txt";
-        public const string FAVTEAM_WOMEN_WPF = @"\WFA\bin\Files\favTeamWoman.txt";
+        public const string PREF_LANG_WPF = @"..\..\..\..\WFA\bin\Files\pref_lang.txt";
+        public const string PREF_CUP_WPF = @"..\..\..\..\WFA\bin\Files\pref_cup.txt";
+        public const string FAVTEAM_MEN_WPF = @"..\..\..\..\WFA\bin\Files\favTeamMen.txt";
+        public const string FAVTEAM_WOMEN_WPF = @"..\..\..\..\WFA\bin\Files\favTeamWoman.txt";
 
 
         //Images
@@ -53,7 +53,7 @@ namespace DAL.Constants
 
 
 
-     
+
 
 
 
@@ -69,6 +69,20 @@ namespace DAL.Constants
         //        return COUNTRYWOMEN;
         //    }
         //}
+
+        public static string GetLanguage()
+        {
+            if (File.ReadLines(PREF_CHAMP).FirstOrDefault() == "hr")
+            {
+                return HR;
+                
+    }
+            else
+            {
+                return EN;
+            }
+        }
+
         public static string GetCountriesByGender()
         {
             if (File.ReadLines(PREF_CHAMP).FirstOrDefault() == "men")

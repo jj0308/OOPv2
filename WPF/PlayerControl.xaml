@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:WPF"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="100"
-             Height="110"
-             Width="110"
+             Height="90"
+             Width="90"
              Margin="0,20,0,20"
              MouseDoubleClick="UserControl_MouseDoubleClick">
     <Grid>
@@ -49,11 +49,10 @@
         <Image 
             x:Name="imgPlayer"
             Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
+            Grid.Column="1"
             Source="/Image/male_player.png" 
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center" Height="70" Margin="16,0" Width="60"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left" Height="70" Width="60"
             />
 
         <Label

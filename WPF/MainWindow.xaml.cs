@@ -58,21 +58,22 @@ namespace WPF
         {
             try
             {
-                filePath = Directory.GetParent(filePath).FullName;
-                filePath = Directory.GetParent(Directory.GetParent(filePath).FullName).FullName;
+             
 
-                favLang = filePath + Constants.PREF_LANG_WPF;
-                
-                //if (new FileInfo(favLang).Length != 0)
-                //{
-                //    //var lines = File.ReadAllLines(favLang);
-                //    // GetFavoriteLang(lines);
-                //    string[] arr = { "hr" };
-                //    GetFavoriteLang(arr);
-                //}
 
-                string[] arr = { "hr" };
-                GetFavoriteLang(arr);
+                string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string relativeFilePath = Constants.PREF_LANG_WPF;
+                string fullPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, relativeFilePath));
+
+
+                if (new FileInfo(fullPath).Length != 0)
+                {
+                        var lines = File.ReadAllLines(fullPath);
+                        GetFavoriteLang(lines);
+                           
+                }
+
+               
             }
             catch (Exception ex)
             {
@@ -114,14 +115,14 @@ namespace WPF
 
                 lblInfo.Content = "Dohvaćam podatke";
 
-                //if (new FileInfo(resolution).Length != 0)
-                //{
-                // var lines = File.ReadAllLines(resolution);
-                //GetResolutionFromFile(lines);
-                string[] arr = { "1440X900" };
-                GetResolutionFromFile(arr);
+                if (new FileInfo(resolution).Length != 0)
+                {
+                 var lines = File.ReadAllLines(resolution);
+                GetResolutionFromFile(lines);
+                
+               
                     CenterWindowOnScreen();
-                //}
+                }
 
                 //if (new FileInfo(championShipFile).Length != 0)
                 //{

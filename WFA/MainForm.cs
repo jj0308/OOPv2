@@ -7,16 +7,16 @@ using System.Diagnostics.Metrics;
 
 namespace WFA
 {
-    public partial class Main : Form
+    public partial class MainForm : Form
     {
         private Countries selectedCountry;
         private IList<Player> allTeamsPlayers = new List<Player>();
         private List<Countries> countries = new List<Countries>();
         string championShipFile;
         string favoritePlayersFile;
-        public Main()
+        public MainForm()
         {
-            
+
             CheckIfSettingsFileExists();
             SetSettings.SetCulture(File.ReadLines(Constants.PREF_LANG).FirstOrDefault());
             InitializeComponent();
@@ -34,12 +34,12 @@ namespace WFA
 
         private async void Main_Load(object sender, EventArgs e)
         {
-            
-         
+
+
             btnRank.Enabled = false;
 
 
-            if (SetSettings.settings.Language == "en")
+            if (Constants.GetLanguage() == "en")
             {
                 lblInfo.Text = "I'm retrieving data on national teams...";
             }
@@ -354,9 +354,12 @@ namespace WFA
             SaveFavoritePlayersData(favoritePlayersFile, flwFavPlayer.Controls.Cast<PlayerControl>().ToList());
 
             RankFrom rankForm = new RankFrom(country, fifaCode);
+
             rankForm.Show();
             this.Hide();
         }
+
+
 
         private void SaveChampionshipData(string championshipFile, Countries selectedCountry)
         {
@@ -383,6 +386,20 @@ namespace WFA
             catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}");
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string msg = SetSettings.settings.Language == "en" ? "Are you sure you want to exit?" : "Jesi li siguran da želiš izaæi?";
+            string exitConfirmation = SetSettings.settings.Language == "en" ? "Exit Confirmation" : "Potvrda izlaza";
+            DialogResult result = MessageBox.Show(msg, exitConfirmation, MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+
+            if (result == DialogResult.Cancel)
+            {
+
+                e.Cancel = true;
             }
         }
     }
