@@ -23,22 +23,22 @@
         </Grid.Background>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="12*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-      
+
 
         <Border  Grid.Row="3" Grid.ColumnSpan="8" Background="#0C2740" />
    
@@ -58,7 +58,7 @@
         <Button
             x:Name="btnInfoHomeTeam"
             Grid.Column="1"
-            Content="info"
+            Content="HomeTeam"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             Padding="20, 2" Click="BtnInfoHomeTeam_Click"

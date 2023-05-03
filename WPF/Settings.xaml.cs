@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DAL.Constants;
 
+
 namespace WPF
 {
     /// <summary>
@@ -42,8 +43,7 @@ namespace WPF
         {
             cbResolution.Items.Clear();
             InitializeComponent();
-            cbResolution.Items.Add("1280X720");
-            cbResolution.Items.Add("1440X900");
+            cbResolution.Items.Add("1152X759");
             cbResolution.Items.Add("1920X1080");
             cbResolution.Items.Add("Full-Screen");
         }
@@ -72,59 +72,52 @@ namespace WPF
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            _filePath = Directory.GetParent(_filePath).FullName;
-            _filePath = Directory.GetParent(Directory.GetParent(_filePath).FullName).FullName;
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-            langFile = _filePath + Constants.PREF_LANG_WPF;
-            championShipFile = _filePath + Constants.PREF_CUP_WPF;
-            try
+            langFile = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.PREF_LANG_WPF));
+            championShipFile = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.PREF_CHAMP_WPF));
+
+            bool langSelected = CheckComboBoxSelection(cbLang, "jezik");
+            bool contestSelected = CheckComboBoxSelection(cbContest, "prvenstvo");
+            bool resolutionSelected = CheckComboBoxSelection(cbResolution, "rezoluciju");
+
+            if (langSelected && contestSelected && resolutionSelected)
             {
-                using (StreamWriter writer = new StreamWriter(langFile))
+                try
                 {
-                    if (!File.Exists(langFile)) return;
-                    var favLang = cbLang.SelectedItem;
-                    writer.WriteLine(favLang);
+                    WriteToFile(langFile, cbLang.SelectedItem);
+                    WriteToFile(championShipFile, cbContest.SelectedItem);
+                    WriteToFile(Constants.PREF_RESOLUTION, cbResolution.SelectedItem);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"{ex.Message} {ex.StackTrace}");
                 }
 
-                using (StreamWriter writer = new StreamWriter(championShipFile))
-                {
-                    if (!File.Exists(championShipFile)) return;
-                    var favCup = cbContest.SelectedItem;
-                    writer.WriteLine(favCup);
-                }
-
-                using (StreamWriter writer = new StreamWriter(Constants.PREF_RESOLUTION))
-                {
-                    if (!File.Exists(Constants.PREF_RESOLUTION)) return;
-                    var favResolution = cbResolution.SelectedItem;
-                    writer.WriteLine(favResolution);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message} {ex.StackTrace}");
-            }
-
-            if (cbLang.SelectedItem == null)
-            {
-                MessageBox.Show("Morate odabrati jezik...", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
-                cbLang.Focus();
-            }
-            if (cbContest.SelectedItem == null)
-            {
-                MessageBox.Show("Morate odabrati prvenstvo...", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
-                cbLang.Focus();
-            }
-            if (cbResolution.SelectedItem == null)
-            {
-                MessageBox.Show("Morate odabrati rezoluciju...", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
-                cbLang.Focus();
-            }
-            else
-            {
                 MessageBox.Show("Uspješno ste spremili postavke...", "Information!", MessageBoxButton.OK, MessageBoxImage.Information);
-                Close();
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
             }
+        }
+        private void WriteToFile(string filePath, object selectedItem)
+        {
+            if (selectedItem != null && File.Exists(filePath))
+            {
+                File.WriteAllText(filePath, selectedItem.ToString());
+            }
+        }
+
+        private bool CheckComboBoxSelection(ComboBox comboBox, string message)
+        {
+            if (comboBox.SelectedItem == null)
+            {
+                MessageBox.Show($"Morate odabrati {message}...", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                comboBox.Focus();
+                return false;
+            }
+
+            return true;
         }
     }
 }

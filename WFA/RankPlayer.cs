@@ -1,4 +1,5 @@
-﻿using DAL.Model;
+﻿using DAL.Constants;
+using DAL.Model;
 using iText.Kernel.Pdf.Layer;
 using System;
 using System.Collections.Generic;
@@ -48,12 +49,50 @@ namespace WFA
             lblYellowCards.Text = player.YellowCards.ToString();
             lblScoredGoals.Text = player.Goals.ToString();
             lblApearences.Text = player.Appearances.ToString();
-    
-            if (!string.IsNullOrEmpty(player.Image) && File.Exists(player.Image))
-            {
-                imgPlayer.Image = Image.FromFile(player.Image);
-            }
+            imgPlayer = GetSavedImageIfExsists(player);
+           
 
         }
+
+        private PictureBox GetSavedImageIfExsists(Player player)
+        {
+            try
+            {
+                string imagesFolderPath = GetImagesFolderPath();
+                List<string> savedPlayersImages = Directory.GetFiles(imagesFolderPath).ToList();
+
+                var playerName = player.Name.ToLower();
+
+                foreach (var item in savedPlayersImages)
+                {
+                    var playerNameFromImage = Path.GetFileNameWithoutExtension(item).ToLower();
+                    var imageExtension = item.Substring(item.LastIndexOf('.')).ToLower();
+
+                    if (playerName == playerNameFromImage)
+                    {
+                        PictureBox pbPlayerImage = new PictureBox
+                        {
+                            Image = Image.FromFile(item),
+                            SizeMode = PictureBoxSizeMode.StretchImage
+                        };
+                        return pbPlayerImage;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            return null;
+        }
+
+        private string GetImagesFolderPath()
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string folderPath = Path.Combine(currentDirectory, "Images");
+            return folderPath;
+        }
+
     }
 }

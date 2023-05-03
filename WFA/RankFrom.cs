@@ -134,7 +134,7 @@ namespace WFA
                         Name = playerName,
                         Goals = "0",
                         YellowCards = "0",
-                        Appearances = "0"
+                        Appearances = "1"
                     };
 
                     playerStats.Add(newPlayer, newPlayer);
@@ -153,7 +153,7 @@ namespace WFA
                 string playerName = group.Key;
 
                 int goals = group.Count(e => e.TypeOfEvent == Constants.Goal || e.TypeOfEvent == Constants.GoalPenalty);
-                int yellowCards = group.Count(e => e.TypeOfEvent == Constants.GoalPenalty);
+                int yellowCards = group.Count(e => e.TypeOfEvent == Constants.YellowCard);
 
                 Player existingPlayer = playerStats.Keys.FirstOrDefault(p => p.Name == playerName);
 
@@ -170,7 +170,7 @@ namespace WFA
                         Name = playerName,
                         Goals = goals.ToString(),
                         YellowCards = yellowCards.ToString(),
-                        Appearances = "0"
+                        Appearances = "1"
                     };
 
                     playerStats.Add(newPlayer, newPlayer);
@@ -244,7 +244,7 @@ namespace WFA
 
         private void rbAudienceAsc_CheckedChanged(object sender, EventArgs e)
         {
-            //lblMsg = "Sortiram igrace";
+           
             DisplaySortedSoccerMatches();
         }
 

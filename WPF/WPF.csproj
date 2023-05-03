@@ -8,7 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\field.png" />
+    <None Remove="Images\sss.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\field.png" />
+    <Resource Include="Images\sss.jpg" />
   </ItemGroup>
 
 </Project>

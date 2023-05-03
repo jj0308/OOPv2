@@ -23,15 +23,9 @@ using System.IO;
 
 namespace WPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private const char DEL = 'X';
-        private string _filePath = System.IO.Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
-        private string filePath = System.IO.Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
-
         private List<SoccerMatch> soccerMatch = new List<SoccerMatch>();
         private List<Countries> countriesAll = new List<Countries>();
         private List<Countries> awayCountries = new List<Countries>();
@@ -58,8 +52,6 @@ namespace WPF
         {
             try
             {
-             
-
 
                 string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
                 string relativeFilePath = Constants.PREF_LANG_WPF;
@@ -102,16 +94,21 @@ namespace WPF
         //Dohvaćam podatke o CUP i GENDER - popunjavam combobox sa timovima
         private async void Window_ContentRendered(object sender, EventArgs e)
         {
-            _filePath = Directory.GetParent(_filePath).FullName;
-            _filePath = Directory.GetParent(Directory.GetParent(_filePath).FullName).FullName;
-
+                    
             try
             {
 
                 resolution = Constants.PREF_RESOLUTION;
-                championShipFile = _filePath + Constants.PREF_CUP_WPF;
-                favMenTeam = _filePath + Constants.FAVTEAM_MEN_WPF;
-                favWomenTeam = _filePath + Constants.FAVTEAM_WOMEN_WPF;
+                
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                
+
+                 championShipFile = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.PREF_CHAMP_WPF));
+
+
+                favMenTeam = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.FAVTEAM_MEN_WPF));
+                favWomenTeam = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.FAVTEAM_MEN_WPF));
+
 
                 lblInfo.Content = "Dohvaćam podatke";
 
@@ -124,23 +121,24 @@ namespace WPF
                     CenterWindowOnScreen();
                 }
 
-                //if (new FileInfo(championShipFile).Length != 0)
-                //{
-                   // var lines = File.ReadAllLines(championShipFile);
-                   // string s = string.Join("", lines);
 
-                    if ("men" == Constants.MEN)
+                    if (new FileInfo(championShipFile).Length != 0)
+                
                     {
-                        //if (new FileInfo(favMenTeam).Length != 0)
-                        //{
+                        var lines = File.ReadAllLines(championShipFile);
+                        string s = string.Join("", lines);
+
+                    if (s == Constants.MEN)
+                    {
+                        if (new FileInfo(favMenTeam).Length != 0)
+                        {
                             SetSettings.settings.Gender = Constants.MEN;
-                            //var linesMenTeam = File.ReadAllLines(favMenTeam);
+                            var linesMenTeam = File.ReadAllLines(favMenTeam);
                             await GetCountriesFromFile(Constants.COUNTRYMEN);
 
-                    //GetFavoriteTeamFromFile(linesMenTeam);
-                    string[] ar2 = { "Poland (POL)" };
-                            GetFavoriteTeamFromFile(ar2);
-                    // }
+                            GetFavoriteTeamFromFile(linesMenTeam);
+                    
+                    }
                 }
                     else
                     {
@@ -152,7 +150,7 @@ namespace WPF
                             GetFavoriteTeamFromFile(linesWomenTeam);
                         }
                     }
-                //}
+                }
             }
             catch (Exception ex)
             {
@@ -163,6 +161,11 @@ namespace WPF
         //Dohvat rezolucije
         private void GetResolutionFromFile(string[] lines)
         {
+            if (lines == null)
+            {
+                return;
+            }
+
             foreach (var line in lines)
             {
                 if (line == "Full-Screen")
@@ -172,11 +175,13 @@ namespace WPF
                 else
                 {
                     string[] details = line.Split(DEL);
-                    var x = int.Parse(details[0]);
-                    var y = int.Parse(details[1]);
+                    int x, y;
 
-                    Application.Current.MainWindow.Width = x;
-                    Application.Current.MainWindow.Height = y;
+                    if (int.TryParse(details[0], out x) && int.TryParse(details[1], out y))
+                    {
+                        this.Width = x;
+                        this.Height = y;
+                    }
                 }
             }
         }
@@ -184,8 +189,8 @@ namespace WPF
         //Centriranje prozora u sredinu ekrana
         private void CenterWindowOnScreen()
         {
-            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
-            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double screenWidth = SystemParameters.PrimaryScreenWidth;
+            double screenHeight = SystemParameters.PrimaryScreenHeight;
             double windowWidth = this.Width;
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
@@ -229,12 +234,11 @@ namespace WPF
             try
             {
                 WCREPO wCREPO = new WCREPO();
-                //string link = Constants.GetMatchesByGender() + fifa_code;
+                string link = Constants.GetMatchesByGender() + fifa_code;
+             
 
-                string test = "https://worldcup-vua.nullbit.hr/men/matches/country?fifa_code=" + fifa_code;
 
-
-                soccerMatch = await wCREPO.GetStats(test);
+                soccerMatch = await wCREPO.GetStats(link);
 
                 matchData = GetMatchData(soccerMatch, country);
 
@@ -246,7 +250,7 @@ namespace WPF
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"{ex.Message} ode ");
+                MessageBox.Show($"{ex.Message} ode puca ");
             }
         }
 
@@ -608,6 +612,8 @@ namespace WPF
         {
             Settings settings = new Settings();
             settings.Show();
+            this.Close();
+            
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

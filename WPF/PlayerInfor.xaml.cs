@@ -32,8 +32,8 @@ namespace WPF
             lblCaptain.Content = player.Captain ? "Yes" : "No";
             lblGoals.Content = player.Goals;
             lblYellowCard.Content = player.YellowCards;
-           //
-           // playerImage.Source = GetImageIfExists(player);
+           
+            //playerImage.Source = GetImageIfExists(player);
         }
 
         private ImageSource GetImageIfExists(Player player)
@@ -43,10 +43,7 @@ namespace WPF
             string pictureDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + Constants.PLAYERS_IMAGES_WPF;
             List<string> savedPlayersImages = Directory.GetFiles(pictureDirectory).ToList();
 
-            if (Constants.GetCountriesByGender() == Constants.WOMEN)
-            {
-                playerImage.Source = new BitmapImage(new Uri(Constants.DEFAULT_WOMEN_IMAGE, UriKind.Relative));
-            }
+           
 
             foreach (var item in savedPlayersImages)
             {

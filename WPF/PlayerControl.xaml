@@ -3,22 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WPF"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="100"
-             Height="90"
+             Height="70"
              Width="90"
-             Margin="0,20,0,20"
+             Margin="0,0,0,20"
              MouseDoubleClick="UserControl_MouseDoubleClick">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="18*"/>
         </Grid.ColumnDefinitions>
 
         <Border 
@@ -34,14 +33,12 @@
 
         <Label
             x:Name="lblShirtNumber"
-            Grid.Row="0"
             Grid.Column="0"
             Content="99"
-            FontSize="20"
+            FontSize="15"
             FontWeight="DemiBold"
             Foreground="CornflowerBlue"
-            VerticalAlignment="Top"
-            Margin="0,2,68,0" Height="36" Grid.ColumnSpan="2" Width="NaN"
+            VerticalAlignment="Center" Height="36" Width="NaN"
             />
 
 
@@ -49,10 +46,9 @@
         <Image 
             x:Name="imgPlayer"
             Grid.Row="0"
-            Grid.Column="1"
-            Source="/Image/male_player.png" 
+            Source="/Images/sss.jpg" 
             VerticalAlignment="Top"
-            HorizontalAlignment="Left" Height="70" Width="60"
+            HorizontalAlignment="Right" Height="35" Width="43" Margin="0,17,7,0" Grid.Column="1" Stretch="Fill"
             />
 
         <Label
@@ -62,10 +58,10 @@
             Grid.ColumnSpan="2"
             Content="Player Name"
             Foreground="CornflowerBlue"
-            FontSize="10"
+            FontSize="8"
             FontWeight="Medium"
-            VerticalAlignment="Top"
-            HorizontalAlignment="Center" Height="25" Width="100" 
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Left" Height="25" Width="100" Margin="0,0,0,0" 
             />
 
     </Grid>

@@ -82,7 +82,12 @@ namespace WFA
 
                 pbPlayerImage.Image = playerNewImage;
 
-                string settingNewImageName = DAL.Constants.Constants.PLAYERS_IMAGES + $@"/" + $"{imageName}" + $"{imageExtension}";
+                string currentDirectory = Directory.GetCurrentDirectory();
+                string folderPath = Path.Combine(currentDirectory, "Images");
+                string settingNewImageName = Path.Combine(folderPath, $"{imageName}{imageExtension}");
+
+               
+                Directory.CreateDirectory(folderPath);
 
                 playerNewImage.Save(settingNewImageName, playerNewImage.RawFormat);
             }
@@ -90,6 +95,7 @@ namespace WFA
             {
                 MessageBox.Show($"{ex.Message}");
             }
+
         }
 
         internal void UnselectPlayer()

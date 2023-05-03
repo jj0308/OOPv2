@@ -39,9 +39,9 @@ namespace DAL.Constants
         public const string PREF_CHAMP = @"../../Files/pref_champ.txt";
 
         //WPF
-        public const string PREF_RESOLUTION = @"../../Files/resolution.txt";
+        public const string PREF_RESOLUTION = @"..\..\..\..\WFA\bin\Files\resolution.txt";
         public const string PREF_LANG_WPF = @"..\..\..\..\WFA\bin\Files\pref_lang.txt";
-        public const string PREF_CUP_WPF = @"..\..\..\..\WFA\bin\Files\pref_cup.txt";
+        public const string PREF_CHAMP_WPF = @"..\..\..\..\WFA\bin\Files\pref_champ.txt";
         public const string FAVTEAM_MEN_WPF = @"..\..\..\..\WFA\bin\Files\favTeamMen.txt";
         public const string FAVTEAM_WOMEN_WPF = @"..\..\..\..\WFA\bin\Files\favTeamWoman.txt";
 
@@ -49,30 +49,14 @@ namespace DAL.Constants
         //Images
         public const string PLAYERS_IMAGES = @"Players_images";
         public const string PLAYERS_IMAGES_WPF = @"\WFA\bin\Debug\Players_images";
-        public const string DEFAULT_WOMEN_IMAGE = @"../../Image/female_player.png";
+       
 
 
 
-
-
-
-
-
-        //public static string GetCountriesByGender()
-        //{
-        //    if (SetSettings.settings.Gender == "men")
-        //    {
-        //        return COUNTRYMEN;
-        //    }
-        //    else
-        //    {
-        //        return COUNTRYWOMEN;
-        //    }
-        //}
 
         public static string GetLanguage()
         {
-            if (File.ReadLines(PREF_CHAMP).FirstOrDefault() == "hr")
+            if (File.ReadLines(PREF_LANG).FirstOrDefault() == "hr")
             {
                 return HR;
                 
@@ -85,7 +69,7 @@ namespace DAL.Constants
 
         public static string GetCountriesByGender()
         {
-            if (File.ReadLines(PREF_CHAMP).FirstOrDefault() == "men")
+            if (File.ReadLines(PREF_CHAMP).FirstOrDefault() == "men" )
             {
                 return COUNTRYMEN;
             }
@@ -109,18 +93,11 @@ namespace DAL.Constants
 
         }
 
-        //public static string GetMatchesByGender()
-        //{
-        //    if (SetSettings.settings.Gender == "men")
-        //    {
-        //        return MATCHMEN;
-        //    }
-        //    else
-        //    {
-        //        return MATCHWOMEN;
-        //    }
+       
 
-        //}
+
+
+    
 
 
     }
