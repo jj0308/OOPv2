@@ -32,11 +32,7 @@ namespace WPF
 
         public MatchData matchData;
 
-        string championShipFile;
-        string favMenTeam;
-        string favWomenTeam;
-        string resolution;
-        string favLang;
+       
         Countries selectedHomeCountry;
         Countries selectedAwayCountry;
         private string homeCountry;
@@ -48,10 +44,7 @@ namespace WPF
             InitializeComponent();
         }
 
-        private void CheckIfFilesExits()
-        {
-            throw new NotImplementedException();
-        }
+      
 
         //Postavljanje jezika iz file-a
         private void SetCultureFromFile()
@@ -100,60 +93,45 @@ namespace WPF
         //Dohvaćam podatke o CUP i GENDER - popunjavam combobox sa timovima
         private async void Window_ContentRendered(object sender, EventArgs e)
         {
-                    
             try
             {
+                var resolutionPath = Constants.PREF_RESOLUTION;
+                var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                var championshipFilePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.PREF_CHAMP_WPF));
+                var favoriteMenTeamPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.FAVTEAM_MEN_WPF));
+                var favoriteWomenTeamPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.FAVTEAM_WOMEN_WPF));
 
-                resolution = Constants.PREF_RESOLUTION;
-                
-                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                
+                lblInfo.Content = "Fetching data";
 
-                 championShipFile = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.PREF_CHAMP_WPF));
-
-
-                favMenTeam = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.FAVTEAM_MEN_WPF));
-                favWomenTeam = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.FAVTEAM_MEN_WPF));
-
-
-                lblInfo.Content = "Dohvaćam podatke";
-
-                if (new FileInfo(resolution).Length != 0)
+                if (File.Exists(resolutionPath))
                 {
-                 var lines = File.ReadAllLines(resolution);
-                GetResolutionFromFile(lines);
-                
-               
-                    CenterWindowOnScreen();
+                    var resolutionLines = File.ReadAllLines(resolutionPath);
+                    GetResolutionFromFile(resolutionLines);
                 }
 
+                if (File.Exists(championshipFilePath))
+                {
+                    var championshipLines = File.ReadAllLines(championshipFilePath);
+                    var championshipText = string.Join("", championshipLines);
 
-                    if (new FileInfo(championShipFile).Length != 0)
-                
+                    if (championshipText == Constants.MEN)
                     {
-                        var lines = File.ReadAllLines(championShipFile);
-                        string s = string.Join("", lines);
-
-                    if (s == Constants.MEN)
-                    {
-                        if (new FileInfo(favMenTeam).Length != 0)
+                        if (File.Exists(favoriteMenTeamPath))
                         {
                             SetSettings.settings.Gender = Constants.MEN;
-                            var linesMenTeam = File.ReadAllLines(favMenTeam);
+                            var favoriteMenTeamLines = File.ReadAllLines(favoriteMenTeamPath);
                             await GetCountriesFromFile(Constants.COUNTRYMEN);
-
-                            GetFavoriteTeamFromFile(linesMenTeam);
-                    
+                            GetFavoriteTeamFromFile(favoriteMenTeamLines);
+                        }
                     }
-                }
                     else
                     {
-                        if (new FileInfo(favWomenTeam).Length != 0)
+                        if (File.Exists(favoriteWomenTeamPath))
                         {
                             SetSettings.settings.Gender = Constants.WOMEN;
-                            var linesWomenTeam = File.ReadAllLines(favWomenTeam);
+                            var favoriteWomenTeamLines = File.ReadAllLines(favoriteWomenTeamPath);
                             await GetCountriesFromFile(Constants.COUNTRYWOMEN);
-                            GetFavoriteTeamFromFile(linesWomenTeam);
+                            GetFavoriteTeamFromFile(favoriteWomenTeamLines);
                         }
                     }
                 }
@@ -163,6 +141,7 @@ namespace WPF
                 MessageBox.Show($"{ex.Message}");
             }
         }
+
 
         //Dohvat rezolucije
         private void GetResolutionFromFile(string[] lines)
@@ -192,16 +171,7 @@ namespace WPF
             }
         }
 
-        //Centriranje prozora u sredinu ekrana
-        private void CenterWindowOnScreen()
-        {
-            double screenWidth = SystemParameters.PrimaryScreenWidth;
-            double screenHeight = SystemParameters.PrimaryScreenHeight;
-            double windowWidth = this.Width;
-            double windowHeight = this.Height;
-            this.Left = (screenWidth / 2) - (windowWidth / 2);
-            this.Top = (screenHeight / 2) - (windowHeight / 2);
-        }
+     
 
         //Dohvat timova
         private async Task GetCountriesFromFile(string path)
@@ -261,42 +231,42 @@ namespace WPF
         }
 
         //Dohvat svih utakmica za odabrani tim
-        private MatchData GetMatchData(List<SoccerMatch> soccerMatch, string country)
+        private MatchData GetMatchData(List<SoccerMatch> soccerMatches, string country)
         {
-            MatchData matchData = new MatchData
+            var matchData = new MatchData
             {
-                StartingEleven = soccerMatch[0].HomeTeamStatistics.StartingEleven.ToList(),
+                StartingEleven = soccerMatches[0].HomeTeamStatistics.StartingEleven.ToList(),
                 MatchPlayed = new List<MatchPlayed>()
             };
 
-            foreach (var item in soccerMatch)
+            foreach (var soccerMatch in soccerMatches)
             {
                 var match = new MatchPlayed();
 
-                if (item.HomeTeamCountry == country)
+                if (soccerMatch.HomeTeamCountry == country)
                 {
-                    match.HomeTeamCountry = item.HomeTeamCountry;
-                    match.HomePlayers = GetEvents(item.HomeTeamStatistics.StartingEleven.ToList(), item.HomeTeamEvents);
-                    match.HomesGoals = item.HomeTeam.Goals;
+                    match.HomeTeamCountry = soccerMatch.HomeTeamCountry;
+                    match.HomePlayers = GetEvents(soccerMatch.HomeTeamStatistics.StartingEleven.ToList(), soccerMatch.HomeTeamEvents);
+                    match.HomesGoals = soccerMatch.HomeTeam.Goals;
                 }
                 else
                 {
-                    match.AwayTeamCountry = item.HomeTeamCountry;
-                    match.AwaysPlayers = GetEvents(item.HomeTeamStatistics.StartingEleven.ToList(), item.HomeTeamEvents);
-                    match.AwaysGoals = item.HomeTeam.Goals;
+                    match.AwayTeamCountry = soccerMatch.HomeTeamCountry;
+                    match.AwaysPlayers = GetEvents(soccerMatch.HomeTeamStatistics.StartingEleven.ToList(), soccerMatch.HomeTeamEvents);
+                    match.AwaysGoals = soccerMatch.HomeTeam.Goals;
                 }
 
-                if (item.AwayTeamCountry == country)
+                if (soccerMatch.AwayTeamCountry == country)
                 {
-                    match.HomeTeamCountry = item.AwayTeamCountry;
-                    match.HomePlayers = GetEvents(item.AwayTeamStatistics.StartingEleven.ToList(), item.AwayTeamEvents);
-                    match.HomesGoals = item.AwayTeam.Goals;
+                    match.HomeTeamCountry = soccerMatch.AwayTeamCountry;
+                    match.HomePlayers = GetEvents(soccerMatch.AwayTeamStatistics.StartingEleven.ToList(), soccerMatch.AwayTeamEvents);
+                    match.HomesGoals = soccerMatch.AwayTeam.Goals;
                 }
                 else
                 {
-                    match.AwayTeamCountry = item.AwayTeamCountry;
-                    match.AwaysPlayers = GetEvents(item.AwayTeamStatistics.StartingEleven.ToList(), item.AwayTeamEvents);
-                    match.AwaysGoals = item.AwayTeam.Goals;
+                    match.AwayTeamCountry = soccerMatch.AwayTeamCountry;
+                    match.AwaysPlayers = GetEvents(soccerMatch.AwayTeamStatistics.StartingEleven.ToList(), soccerMatch.AwayTeamEvents);
+                    match.AwaysGoals = soccerMatch.AwayTeam.Goals;
                 }
                 matchData.MatchPlayed.Add(match);
             }
@@ -304,37 +274,34 @@ namespace WPF
             return matchData;
         }
 
+
         //Dohvat evenata igrača (goal i yellow card)
         private List<Player> GetEvents(List<Player> playersList, List<TeamEvent> teamEvents)
         {
-            List<Player> playersEvent = playersList;
-            foreach (var item in teamEvents)
-            {
-                Player playerEvent = (from player in playersList
-                                      where player.Name == item.Player
-                                      select player).FirstOrDefault();
+            var playersWithEvents = playersList;
 
-                foreach (var pl in playersList)
+            foreach (var teamEvent in teamEvents)
+            {
+                var playerEvent = playersList.FirstOrDefault(player => player.Name == teamEvent.Player);
+
+                if (playerEvent != null)
                 {
-                    if (pl.Name == item.Player)
+                    switch (teamEvent.TypeOfEvent)
                     {
-                        if (item.TypeOfEvent == "yellow-card")
-                        {
-                            ++playerEvent.YellowCardsPerMatch;
-                        }
-                        if (item.TypeOfEvent == "goal-penalty")
-                        {
-                            ++playerEvent.GoalsPerMatch;
-                        }
-                        if (item.TypeOfEvent == "goal")
-                        {
-                            ++playerEvent.GoalsPerMatch;
-                        }
+                        case "yellow-card":
+                            playerEvent.YellowCardsPerMatch++;
+                            break;
+                        case "goal-penalty":
+                        case "goal":
+                            playerEvent.GoalsPerMatch++;
+                            break;
                     }
                 }
             }
-            return playersEvent;
+
+            return playersWithEvents;
         }
+
 
         //Dohvat Home tima
         private void GetHomeTeam(MatchData matchData, string country)

@@ -122,7 +122,7 @@
             FontWeight="Medium"
             IsEditable="True"
             IsReadOnly="True"
-            Text="AwayTeam"
+            Text="Guest Team"
             HorizontalContentAlignment="Right"
             SelectionChanged="cbAwayTeam_SelectionChanged"
             />

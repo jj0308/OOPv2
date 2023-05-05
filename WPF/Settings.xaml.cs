@@ -51,7 +51,7 @@ namespace WPF
         private void PopulateComboBoxContest()
         {
             cbContest.Items.Clear();
-
+            
             cbContest.Items.Add(Constants.MEN);
             cbContest.Items.Add(Constants.WOMEN);
         }
@@ -74,8 +74,13 @@ namespace WPF
         {
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
+
+
             langFile = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.PREF_LANG_WPF));
             championShipFile = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.PREF_CHAMP_WPF));
+
+
+            
 
             bool langSelected = CheckComboBoxSelection(cbLang, "jezik");
             bool contestSelected = CheckComboBoxSelection(cbContest, "prvenstvo");
