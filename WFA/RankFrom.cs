@@ -244,7 +244,7 @@ namespace WFA
 
         private void rbAudienceAsc_CheckedChanged(object sender, EventArgs e)
         {
-           
+
             DisplaySortedSoccerMatches();
         }
 
@@ -392,6 +392,12 @@ namespace WFA
             Settings settingsForm = new Settings();
             settingsForm.ShowDialog();
             this.Close();
+        }
+
+        private void closeAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseForm closeForm = new CloseForm();
+            closeForm.ShowDialog();
         }
     }
 }

@@ -93,11 +93,24 @@ namespace DAL.Constants
 
         }
 
-       
+        public static string GetMatchesByGenderWPF()
+        {
+            if (File.ReadLines(PREF_CHAMP_WPF).FirstOrDefault() == "men")
+            {
+                return MATCHMEN;
+            }
+            else
+            {
+                return MATCHWOMEN;
+            }
+
+        }
 
 
 
-    
+
+
+
 
 
     }

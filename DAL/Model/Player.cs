@@ -29,7 +29,7 @@ namespace DAL.Model
         public bool FavouritePlayer { get; set; }
 
         public string Image { get; set; }
-        public BitmapImage ImageWPF { get; set; }
+       
 
        
 

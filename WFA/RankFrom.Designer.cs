@@ -32,13 +32,15 @@
             menuStrip1 = new MenuStrip();
             settingsToolStripMenuItem = new ToolStripMenuItem();
             changeSettingsToolStripMenuItem = new ToolStripMenuItem();
-            saveSettingsToolStripMenuItem = new ToolStripMenuItem();
+            closeAppToolStripMenuItem = new ToolStripMenuItem();
             printToolStripMenuItem = new ToolStripMenuItem();
             printToolStripMenuItem1 = new ToolStripMenuItem();
             tabControl = new TabControl();
             tabPlayers = new TabPage();
+            lblSortPlayerMsg = new Label();
             pnlPlayers = new FlowLayoutPanel();
             gbGoals = new GroupBox();
+            label5 = new Label();
             rbYCDDesc = new RadioButton();
             rbYcAsc = new RadioButton();
             rbGoalsAsc = new RadioButton();
@@ -59,8 +61,6 @@
             rbAudienceAsc = new RadioButton();
             rbAudienceDesc = new RadioButton();
             lblSortMatches = new Label();
-            label5 = new Label();
-            lblSortPlayerMsg = new Label();
             menuStrip1.SuspendLayout();
             tabControl.SuspendLayout();
             tabPlayers.SuspendLayout();
@@ -78,7 +78,7 @@
             // 
             // settingsToolStripMenuItem
             // 
-            settingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { changeSettingsToolStripMenuItem, saveSettingsToolStripMenuItem });
+            settingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { changeSettingsToolStripMenuItem, closeAppToolStripMenuItem });
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             resources.ApplyResources(settingsToolStripMenuItem, "settingsToolStripMenuItem");
             // 
@@ -88,10 +88,11 @@
             resources.ApplyResources(changeSettingsToolStripMenuItem, "changeSettingsToolStripMenuItem");
             changeSettingsToolStripMenuItem.Click += changeSettingsToolStripMenuItem_Click;
             // 
-            // saveSettingsToolStripMenuItem
+            // closeAppToolStripMenuItem
             // 
-            saveSettingsToolStripMenuItem.Name = "saveSettingsToolStripMenuItem";
-            resources.ApplyResources(saveSettingsToolStripMenuItem, "saveSettingsToolStripMenuItem");
+            closeAppToolStripMenuItem.Name = "closeAppToolStripMenuItem";
+            resources.ApplyResources(closeAppToolStripMenuItem, "closeAppToolStripMenuItem");
+            closeAppToolStripMenuItem.Click += closeAppToolStripMenuItem_Click;
             // 
             // printToolStripMenuItem
             // 
@@ -127,6 +128,11 @@
             tabPlayers.Name = "tabPlayers";
             tabPlayers.UseVisualStyleBackColor = true;
             // 
+            // lblSortPlayerMsg
+            // 
+            resources.ApplyResources(lblSortPlayerMsg, "lblSortPlayerMsg");
+            lblSortPlayerMsg.Name = "lblSortPlayerMsg";
+            // 
             // pnlPlayers
             // 
             resources.ApplyResources(pnlPlayers, "pnlPlayers");
@@ -142,6 +148,11 @@
             resources.ApplyResources(gbGoals, "gbGoals");
             gbGoals.Name = "gbGoals";
             gbGoals.TabStop = false;
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
             // 
             // rbYCDDesc
             // 
@@ -271,16 +282,6 @@
             resources.ApplyResources(lblSortMatches, "lblSortMatches");
             lblSortMatches.Name = "lblSortMatches";
             // 
-            // label5
-            // 
-            resources.ApplyResources(label5, "label5");
-            label5.Name = "label5";
-            // 
-            // lblSortPlayerMsg
-            // 
-            resources.ApplyResources(lblSortPlayerMsg, "lblSortPlayerMsg");
-            lblSortPlayerMsg.Name = "lblSortPlayerMsg";
-            // 
             // RankFrom
             // 
             resources.ApplyResources(this, "$this");
@@ -309,7 +310,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem changeSettingsToolStripMenuItem;
-        private ToolStripMenuItem saveSettingsToolStripMenuItem;
+        private ToolStripMenuItem closeAppToolStripMenuItem;
         private ToolStripMenuItem printToolStripMenuItem;
         private ToolStripMenuItem printToolStripMenuItem1;
         private TabControl tabControl;

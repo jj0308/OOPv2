@@ -41,8 +41,6 @@
             // imgPlayer
             // 
             resources.ApplyResources(imgPlayer, "imgPlayer");
-            imgPlayer.Image = Properties.Resources.imgPlayer;
-            imgPlayer.InitialImage = Properties.Resources.imgPlayer;
             imgPlayer.Name = "imgPlayer";
             imgPlayer.TabStop = false;
             // 

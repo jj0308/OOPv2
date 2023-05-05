@@ -49,12 +49,18 @@ namespace WFA
             lblYellowCards.Text = player.YellowCards.ToString();
             lblScoredGoals.Text = player.Goals.ToString();
             lblApearences.Text = player.Appearances.ToString();
-            imgPlayer = GetSavedImageIfExsists(player);
-           
+            Image img = GetSavedImageIfExsists(player);
+            if (img != null)
+            {
+                imgPlayer.Image = img;
+                imgPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
+
 
         }
 
-        private PictureBox GetSavedImageIfExsists(Player player)
+        private Image GetSavedImageIfExsists(Player player)
         {
             try
             {
@@ -70,12 +76,7 @@ namespace WFA
 
                     if (playerName == playerNameFromImage)
                     {
-                        PictureBox pbPlayerImage = new PictureBox
-                        {
-                            Image = Image.FromFile(item),
-                            SizeMode = PictureBoxSizeMode.StretchImage
-                        };
-                        return pbPlayerImage;
+                        return Image.FromFile(item);
                     }
                 }
             }
@@ -86,6 +87,7 @@ namespace WFA
 
             return null;
         }
+
 
         private string GetImagesFolderPath()
         {

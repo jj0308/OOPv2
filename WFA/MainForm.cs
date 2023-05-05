@@ -338,11 +338,8 @@ namespace WFA
         //Save i ranklist
         private void btncClose_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Exit window?", "Confirm Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dialog == DialogResult.OK)
-            {
-                this.Close();
-            }
+            CloseForm closeForm = new CloseForm();
+            closeForm.ShowDialog();
         }
 
         private void btnRank_Click(object sender, EventArgs e)
@@ -390,18 +387,6 @@ namespace WFA
             }
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            string msg = SetSettings.settings.Language == "en" ? "Are you sure you want to exit?" : "Jesi li siguran da želiš izaæi?";
-            string exitConfirmation = SetSettings.settings.Language == "en" ? "Exit Confirmation" : "Potvrda izlaza";
-            DialogResult result = MessageBox.Show(msg, exitConfirmation, MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-
-            if (result == DialogResult.Cancel)
-            {
-
-                e.Cancel = true;
-            }
-        }
+       
     }
 }

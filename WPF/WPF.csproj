@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="default.png" />
+    <None Remove="Images\default.png" />
     <None Remove="Images\field.png" />
     <None Remove="Images\sss.jpg" />
   </ItemGroup>
@@ -17,8 +19,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="default.png" />
+    <Resource Include="Images\default.png" />
     <Resource Include="Images\field.png" />
-    <Resource Include="Images\sss.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

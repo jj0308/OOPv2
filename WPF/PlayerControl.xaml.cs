@@ -43,10 +43,7 @@ namespace WPF
             string pictureDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + Constants.PLAYERS_IMAGES_WPF;
             List<string> savedPlayersImages = Directory.GetFiles(pictureDirectory).ToList();
 
-            if (Constants.GetCountriesByGender() == Constants.WOMEN)
-            {
-                imgPlayer.Source = new BitmapImage(new Uri(Constants.DEFAULT_WOMEN_IMAGE, UriKind.Relative));
-            }
+           
 
             foreach (var item in savedPlayersImages)
             {

@@ -86,7 +86,7 @@ namespace WFA
                 string folderPath = Path.Combine(currentDirectory, "Images");
                 string settingNewImageName = Path.Combine(folderPath, $"{imageName}{imageExtension}");
 
-               
+
                 Directory.CreateDirectory(folderPath);
 
                 playerNewImage.Save(settingNewImageName, playerNewImage.RawFormat);

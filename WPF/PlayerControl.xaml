@@ -46,7 +46,7 @@
         <Image 
             x:Name="imgPlayer"
             Grid.Row="0"
-            Source="/Images/sss.jpg" 
+            Source="/default.png" 
             VerticalAlignment="Top"
             HorizontalAlignment="Right" Height="35" Width="43" Margin="0,17,7,0" Grid.Column="1" Stretch="Fill"
             />

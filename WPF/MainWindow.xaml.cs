@@ -43,8 +43,14 @@ namespace WPF
 
         public MainWindow()
         {
+            //CheckIfFilesExits();
             SetCultureFromFile();
             InitializeComponent();
+        }
+
+        private void CheckIfFilesExits()
+        {
+            throw new NotImplementedException();
         }
 
         //Postavljanje jezika iz file-a
@@ -234,7 +240,7 @@ namespace WPF
             try
             {
                 WCREPO wCREPO = new WCREPO();
-                string link = Constants.GetMatchesByGender() + fifa_code;
+                string link = Constants.GetMatchesByGenderWPF() + fifa_code;
              
 
 
