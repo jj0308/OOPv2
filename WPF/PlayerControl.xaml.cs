@@ -32,18 +32,15 @@ namespace WPF
             this.player = player;
             lblPlayerName.Content = player.Name;
             lblShirtNumber.Content = player.ShirtNumber.ToString();
-            //imgPlayer.Source = GetImageIfExists(player);
+            imgPlayer.Source = GetImageIfExists(player);
 
         }
 
         private ImageSource GetImageIfExists(Player player)
         {
             var playerName = player.Name.ToLower();
-            string workingDirectory = Environment.CurrentDirectory;
-            string pictureDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + Constants.PLAYERS_IMAGES_WPF;
+            string pictureDirectory = @"C:\Users\JureJukić\source\repos\jj0308\OOPv2\WFA\bin\Debug\net6.0-windows\Images";
             List<string> savedPlayersImages = Directory.GetFiles(pictureDirectory).ToList();
-
-           
 
             foreach (var item in savedPlayersImages)
             {
@@ -57,8 +54,8 @@ namespace WPF
                 }
             }
             return imgPlayer.Source;
-
         }
+
 
         private void UserControl_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {

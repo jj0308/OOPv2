@@ -22,24 +22,24 @@ namespace WPF.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resource {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resource() {
+        public Resources() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WPF.Properties.Resource", typeof(Resource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WPF.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace WPF.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,225 +63,225 @@ namespace WPF.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        internal static string btnCancel_Content {
+        public static string btnCancel {
             get {
-                return ResourceManager.GetString("btnCancel.Content", resourceCulture);
+                return ResourceManager.GetString("btnCancel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CLOSE.
         /// </summary>
-        internal static string btnClose_Content {
+        public static string btnClose {
             get {
-                return ResourceManager.GetString("btnClose.Content", resourceCulture);
+                return ResourceManager.GetString("btnClose", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Guests Team.
         /// </summary>
-        internal static string btnInfoGuestsTeam_Content {
+        public static string btnInfoGuestsTeam {
             get {
-                return ResourceManager.GetString("btnInfoGuestsTeam.Content", resourceCulture);
+                return ResourceManager.GetString("btnInfoGuestsTeam", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Home Team.
         /// </summary>
-        internal static string btnInfoHomeTeam_Content {
+        public static string btnInfoHomeTeam {
             get {
-                return ResourceManager.GetString("btnInfoHomeTeam.Content", resourceCulture);
+                return ResourceManager.GetString("btnInfoHomeTeam", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
-        internal static string btnSave_Content {
+        public static string btnSave {
             get {
-                return ResourceManager.GetString("btnSave.Content", resourceCulture);
+                return ResourceManager.GetString("btnSave", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        internal static string btnSettings_Content {
+        public static string btnSettings {
             get {
-                return ResourceManager.GetString("btnSettings.Content", resourceCulture);
+                return ResourceManager.GetString("btnSettings", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Guests Team.
         /// </summary>
-        internal static string cbAwayTeam_Text {
+        public static string cbAwayTeam {
             get {
-                return ResourceManager.GetString("cbAwayTeam.Text", resourceCulture);
+                return ResourceManager.GetString("cbAwayTeam", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Home Team.
         /// </summary>
-        internal static string cbHomeTeam_Text {
+        public static string cbHomeTeam {
             get {
-                return ResourceManager.GetString("cbHomeTeam.Text", resourceCulture);
+                return ResourceManager.GetString("cbHomeTeam", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CAPITAN:.
         /// </summary>
-        internal static string lblCaptainText_Content {
+        public static string lblCaptainText {
             get {
-                return ResourceManager.GetString("lblCaptainText.Content", resourceCulture);
+                return ResourceManager.GetString("lblCaptainText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Gender.
         /// </summary>
-        internal static string lblContestText_Content {
+        public static string lblContestText {
             get {
-                return ResourceManager.GetString("lblContestText.Content", resourceCulture);
+                return ResourceManager.GetString("lblContestText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
-        internal static string lblCountry_Content {
+        public static string lblCountry {
             get {
-                return ResourceManager.GetString("lblCountry.Content", resourceCulture);
+                return ResourceManager.GetString("lblCountry", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to DRAWS:.
         /// </summary>
-        internal static string lblDrawsText_Content {
+        public static string lblDrawsText {
             get {
-                return ResourceManager.GetString("lblDrawsText.Content", resourceCulture);
+                return ResourceManager.GetString("lblDrawsText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to GAMES PLAYED:.
         /// </summary>
-        internal static string lblGamesPlayedText_Content {
+        public static string lblGamesPlayedText {
             get {
-                return ResourceManager.GetString("lblGamesPlayedText.Content", resourceCulture);
+                return ResourceManager.GetString("lblGamesPlayedText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to GOALS AGAINST:.
         /// </summary>
-        internal static string lblGoalsAgainstText_Content {
+        public static string lblGoalsAgainstText {
             get {
-                return ResourceManager.GetString("lblGoalsAgainstText.Content", resourceCulture);
+                return ResourceManager.GetString("lblGoalsAgainstText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to GOALS DIFFERENCES:.
         /// </summary>
-        internal static string lblGoalsDifferencesText_Content {
+        public static string lblGoalsDifferencesText {
             get {
-                return ResourceManager.GetString("lblGoalsDifferencesText.Content", resourceCulture);
+                return ResourceManager.GetString("lblGoalsDifferencesText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to GOALS FOR:.
         /// </summary>
-        internal static string lblGoalsForText_Content {
+        public static string lblGoalsForText {
             get {
-                return ResourceManager.GetString("lblGoalsForText.Content", resourceCulture);
+                return ResourceManager.GetString("lblGoalsForText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to GOALS:.
         /// </summary>
-        internal static string lblGoalsText_Content {
+        public static string lblGoalsText {
             get {
-                return ResourceManager.GetString("lblGoalsText.Content", resourceCulture);
+                return ResourceManager.GetString("lblGoalsText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
-        internal static string lblLangText_Content {
+        public static string lblLangText {
             get {
-                return ResourceManager.GetString("lblLangText.Content", resourceCulture);
+                return ResourceManager.GetString("lblLangText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to LOSSES:.
         /// </summary>
-        internal static string lblLossesText_Content {
+        public static string lblLossesText {
             get {
-                return ResourceManager.GetString("lblLossesText.Content", resourceCulture);
+                return ResourceManager.GetString("lblLossesText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to NAME.
         /// </summary>
-        internal static string lblPlayerName_Content {
+        public static string lblPlayerName {
             get {
-                return ResourceManager.GetString("lblPlayerName.Content", resourceCulture);
+                return ResourceManager.GetString("lblPlayerName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to POINTS:.
         /// </summary>
-        internal static string lblPointsText_Content {
+        public static string lblPointsText {
             get {
-                return ResourceManager.GetString("lblPointsText.Content", resourceCulture);
+                return ResourceManager.GetString("lblPointsText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Resolution.
         /// </summary>
-        internal static string lblResolutionText_Content {
+        public static string lblResolutionText {
             get {
-                return ResourceManager.GetString("lblResolutionText.Content", resourceCulture);
+                return ResourceManager.GetString("lblResolutionText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        internal static string lblSettings_Content {
+        public static string lblSettings {
             get {
-                return ResourceManager.GetString("lblSettings.Content", resourceCulture);
+                return ResourceManager.GetString("lblSettings", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to WINS:.
         /// </summary>
-        internal static string lblWinsText_Content {
+        public static string lblWinsText {
             get {
-                return ResourceManager.GetString("lblWinsText.Content", resourceCulture);
+                return ResourceManager.GetString("lblWinsText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to YELLOWCARDS:.
         /// </summary>
-        internal static string lblYellowCardsText_Content {
+        public static string lblYellowCardsText {
             get {
-                return ResourceManager.GetString("lblYellowCardsText.Content", resourceCulture);
+                return ResourceManager.GetString("lblYellowCardsText", resourceCulture);
             }
         }
     }

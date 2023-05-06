@@ -243,19 +243,6 @@ namespace WPF
             {
                 var match = new MatchPlayed();
 
-                if (soccerMatch.HomeTeamCountry == country)
-                {
-                    match.HomeTeamCountry = soccerMatch.HomeTeamCountry;
-                    match.HomePlayers = GetEvents(soccerMatch.HomeTeamStatistics.StartingEleven.ToList(), soccerMatch.HomeTeamEvents);
-                    match.HomesGoals = soccerMatch.HomeTeam.Goals;
-                }
-                else
-                {
-                    match.AwayTeamCountry = soccerMatch.HomeTeamCountry;
-                    match.AwaysPlayers = GetEvents(soccerMatch.HomeTeamStatistics.StartingEleven.ToList(), soccerMatch.HomeTeamEvents);
-                    match.AwaysGoals = soccerMatch.HomeTeam.Goals;
-                }
-
                 if (soccerMatch.AwayTeamCountry == country)
                 {
                     match.HomeTeamCountry = soccerMatch.AwayTeamCountry;
@@ -268,6 +255,21 @@ namespace WPF
                     match.AwaysPlayers = GetEvents(soccerMatch.AwayTeamStatistics.StartingEleven.ToList(), soccerMatch.AwayTeamEvents);
                     match.AwaysGoals = soccerMatch.AwayTeam.Goals;
                 }
+
+                if (soccerMatch.HomeTeamCountry == country)
+                {
+                    match.HomeTeamCountry = soccerMatch.HomeTeamCountry;
+                    match.HomePlayers = GetEvents(soccerMatch.HomeTeamStatistics.StartingEleven.ToList(), soccerMatch.HomeTeamEvents);
+                    match.HomesGoals = soccerMatch.HomeTeam.Goals;
+                }
+                else
+                {
+                    match.AwayTeamCountry = soccerMatch.AwayTeamCountry;
+                    match.AwaysPlayers = GetEvents(soccerMatch.AwayTeamStatistics.StartingEleven.ToList(), soccerMatch.AwayTeamEvents);
+                    match.AwaysGoals = soccerMatch.AwayTeam.Goals;
+                }
+
+                
                 matchData.MatchPlayed.Add(match);
             }
 

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF"
+        xmlns:lang="clr-namespace:WPF.Properties"
         mc:Ignorable="d"
         Title="PlayerInfo"
         Height="400"
@@ -68,7 +68,7 @@
         <Label
             x:Name="lblCaptainText"            
             Grid.Row="2"
-            Content="CAPITAN:"
+            Content="{x:Static lang:Resources.lblCaptainText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"
@@ -78,7 +78,7 @@
         <Label
             Name="lblGoalsText"
             Grid.Row="3"
-            Content="GOALS:"
+            Content="{x:Static lang:Resources.lblGoalsText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"
@@ -88,7 +88,7 @@
         <Label
             x:Name="lblYellowCardsText"
             Grid.Row="4"
-            Content="YELLOWCARDS:"
+            Content="{x:Static lang:Resources.lblYellowCardsText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"

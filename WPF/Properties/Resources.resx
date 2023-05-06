@@ -117,79 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCancel.Content" xml:space="preserve">
-    <value>Odustani</value>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="btnClose.Content" xml:space="preserve">
-    <value>ZATVORI</value>
+  <data name="btnClose" xml:space="preserve">
+    <value>CLOSE</value>
   </data>
-  <data name="btnInfoGuestsTeam.Content" xml:space="preserve">
-    <value>Gosti info</value>
+  <data name="btnInfoGuestsTeam" xml:space="preserve">
+    <value>Guests Team</value>
   </data>
-  <data name="btnInfoHomeTeam.Content" xml:space="preserve">
-    <value>Domaci info</value>
+  <data name="btnInfoHomeTeam" xml:space="preserve">
+    <value>Home Team</value>
   </data>
-  <data name="btnSave.Content" xml:space="preserve">
-    <value>Spremi</value>
+  <data name="btnSave" xml:space="preserve">
+    <value>Save</value>
   </data>
-  <data name="btnSettings.Content" xml:space="preserve">
-    <value>Postavke</value>
+  <data name="btnSettings" xml:space="preserve">
+    <value>Settings</value>
   </data>
-  <data name="cbAwayTeam.Text" xml:space="preserve">
-    <value>Gosti</value>
+  <data name="cbAwayTeam" xml:space="preserve">
+    <value>Guests Team</value>
   </data>
-  <data name="cbHomeTeam.Text" xml:space="preserve">
-    <value>Domaci</value>
+  <data name="cbHomeTeam" xml:space="preserve">
+    <value>Home Team</value>
   </data>
-  <data name="lblCaptainText.Content" xml:space="preserve">
-    <value>KAPETAN:</value>
+  <data name="lblCaptainText" xml:space="preserve">
+    <value>CAPITAN:</value>
   </data>
-  <data name="lblContestText.Content" xml:space="preserve">
-    <value>Spol</value>
+  <data name="lblContestText" xml:space="preserve">
+    <value>Gender</value>
   </data>
-  <data name="lblCountry.Content" xml:space="preserve">
-    <value>Drzava</value>
+  <data name="lblCountry" xml:space="preserve">
+    <value>Country</value>
   </data>
-  <data name="lblDrawsText.Content" xml:space="preserve">
-    <value>NERJESENO:</value>
+  <data name="lblDrawsText" xml:space="preserve">
+    <value>DRAWS:</value>
   </data>
-  <data name="lblGamesPlayedText.Content" xml:space="preserve">
-    <value>UTAKMICE:</value>
+  <data name="lblGamesPlayedText" xml:space="preserve">
+    <value>GAMES PLAYED:</value>
   </data>
-  <data name="lblGoalsAgainstText.Content" xml:space="preserve">
-    <value>PRIMLJENI:</value>
+  <data name="lblGoalsAgainstText" xml:space="preserve">
+    <value>GOALS AGAINST:</value>
   </data>
-  <data name="lblGoalsDifferencesText.Content" xml:space="preserve">
-    <value>GOL RAZLIKA:</value>
+  <data name="lblGoalsDifferencesText" xml:space="preserve">
+    <value>GOALS DIFFERENCES:</value>
   </data>
-  <data name="lblGoalsForText.Content" xml:space="preserve">
-    <value>GOLOVI:</value>
+  <data name="lblGoalsForText" xml:space="preserve">
+    <value>GOALS FOR:</value>
   </data>
-  <data name="lblGoalsText.Content" xml:space="preserve">
-    <value>GOLOVI:</value>
+  <data name="lblGoalsText" xml:space="preserve">
+    <value>GOALS:</value>
   </data>
-  <data name="lblLangText.Content" xml:space="preserve">
-    <value>Jezik</value>
+  <data name="lblLangText" xml:space="preserve">
+    <value>Language</value>
   </data>
-  <data name="lblLossesText.Content" xml:space="preserve">
-    <value>PORAZI:</value>
+  <data name="lblLossesText" xml:space="preserve">
+    <value>LOSSES:</value>
   </data>
-  <data name="lblPlayerName.Content" xml:space="preserve">
-    <value>IME IGRACA</value>
+  <data name="lblPlayerName" xml:space="preserve">
+    <value>NAME</value>
   </data>
-  <data name="lblPointsText.Content" xml:space="preserve">
-    <value>BODOVI:</value>
+  <data name="lblPointsText" xml:space="preserve">
+    <value>POINTS:</value>
   </data>
-  <data name="lblResolutionText.Content" xml:space="preserve">
-    <value>Rezolucija</value>
+  <data name="lblResolutionText" xml:space="preserve">
+    <value>Resolution</value>
   </data>
-  <data name="lblSettings.Content" xml:space="preserve">
-    <value>Postavke</value>
+  <data name="lblSettings" xml:space="preserve">
+    <value>Settings</value>
   </data>
-  <data name="lblWinsText.Content" xml:space="preserve">
-    <value>POBJEDE:</value>
+  <data name="lblWinsText" xml:space="preserve">
+    <value>WINS:</value>
   </data>
-  <data name="lblYellowCardsText.Content" xml:space="preserve">
-    <value>ZUTI KARTONI:</value>
+  <data name="lblYellowCardsText" xml:space="preserve">
+    <value>YELLOWCARDS:</value>
   </data>
 </root>

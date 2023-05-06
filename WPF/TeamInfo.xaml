@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF"
+        xmlns:lang="clr-namespace:WPF.Properties"
         mc:Ignorable="d"
         Title="TeamInfo" 
         Height="380"
@@ -60,7 +60,7 @@
         <Label
             Name="lblWinsText"
             Grid.Row="1"
-            Content="WINS: "
+            Content="{x:Static lang:Resources.lblWinsText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"
@@ -69,7 +69,7 @@
         <Label
             x:Name="lblLossesText"
             Grid.Row="2"
-            Content="LOSES: "
+            Content="{x:Static lang:Resources.lblLossesText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"
@@ -78,7 +78,7 @@
         <Label
             x:Name="lblDrawsText"
             Grid.Row="3"
-            Content="DRAWS: "
+            Content="{x:Static lang:Resources.lblDrawsText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"
@@ -88,7 +88,7 @@
         <Label
             Name="lblGamesPlayedText"
             Grid.Row="4"
-            Content="GAMES PLAYED: "
+            Content="{x:Static lang:Resources.lblGamesPlayedText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"
@@ -97,7 +97,7 @@
         <Label
             Name="lblPointsText"
             Grid.Row="5"
-            Content="POINTS: "
+            Content="{x:Static lang:Resources.lblPointsText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"
@@ -106,7 +106,7 @@
         <Label
             x:Name="lblGoalsForText"
             Grid.Row="6"
-            Content="GOALS FOR"
+            Content="{x:Static lang:Resources.lblGoalsForText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"
@@ -116,7 +116,7 @@
         <Label
             x:Name="lblGoalsAgainstText"
             Grid.Row="7"
-            Content="GOALS AGAINST: "
+            Content="{x:Static lang:Resources.lblGoalsAgainstText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"
@@ -126,7 +126,7 @@
         <Label
             x:Name="lblGoalsDifferencesText"
             Grid.Row="8"
-            Content="GOALS DIFFERENCES"
+            Content="{x:Static lang:Resources.lblGoalsDifferencesText}"
             FontSize="14"
             Foreground="White"
             VerticalAlignment="Center"
@@ -221,7 +221,7 @@
             x:Name="btnClose"
             Grid.Column="1"
             Grid.Row="9"
-            Content="CLOSE"
+            Content="{x:Static lang:Resources.btnClose}"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             Padding="20, 2" Click="btnClose_Click"
