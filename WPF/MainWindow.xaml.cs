@@ -254,7 +254,7 @@ namespace WPF
 
                 GetHomeTeam(matchData, country);
                 homeCountry = country + $" (" + fifa_code + $")";
-                cbHomeTeam.SelectedItem = homeCountry;
+
                 cbAwayTeam.Items.Clear();
                 
                 GetOpponentTeams(matchData, country);
