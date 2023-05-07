@@ -97,6 +97,15 @@ namespace WPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string btnNo {
+            get {
+                return ResourceManager.GetString("btnNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string btnSave {
@@ -111,6 +120,15 @@ namespace WPF.Properties {
         public static string btnSettings {
             get {
                 return ResourceManager.GetString("btnSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string btnYes {
+            get {
+                return ResourceManager.GetString("btnYes", resourceCulture);
             }
         }
         
@@ -138,6 +156,15 @@ namespace WPF.Properties {
         public static string lblCaptainText {
             get {
                 return ResourceManager.GetString("lblCaptainText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do u want close the app?.
+        /// </summary>
+        public static string lblCloseTxt {
+            get {
+                return ResourceManager.GetString("lblCloseTxt", resourceCulture);
             }
         }
         
@@ -246,6 +273,15 @@ namespace WPF.Properties {
         public static string lblPointsText {
             get {
                 return ResourceManager.GetString("lblPointsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to POSITION:.
+        /// </summary>
+        public static string lblPositionText {
+            get {
+                return ResourceManager.GetString("lblPositionText", resourceCulture);
             }
         }
         

@@ -107,6 +107,20 @@ namespace DAL.Constants
         }
 
 
+        public static string GetCountiresByGenderWPF()
+        {
+            if (File.ReadLines(PREF_CHAMP_WPF).FirstOrDefault() == "men")
+            {
+                return COUNTRYMEN;
+            }
+            else
+            {
+                return COUNTRYWOMEN;
+            }
+
+        }
+
+
 
 
 

@@ -28,22 +28,19 @@ namespace WPF
         {
             InitializeComponent();
             lblPlayerName.Content = player.Name;
+            lblPosition.Content = player.Position;
             lblShirtName.Content = player.ShirtNumber;
             lblCaptain.Content = player.Captain ? "Yes" : "No";
             lblGoals.Content = player.Goals;
             lblYellowCard.Content = player.YellowCards;
-           
-            //playerImage.Source = GetImageIfExists(player);
+            playerImage.Source = GetImageIfExists(player);
         }
 
         private ImageSource GetImageIfExists(Player player)
         {
             var playerName = player.Name.ToLower();
-            string workingDirectory = Environment.CurrentDirectory;
-            string pictureDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + Constants.PLAYERS_IMAGES_WPF;
+            string pictureDirectory = @"C:\Users\JureJukić\source\repos\jj0308\OOPv2\WFA\bin\Debug\net6.0-windows\Images";
             List<string> savedPlayersImages = Directory.GetFiles(pictureDirectory).ToList();
-
-           
 
             foreach (var item in savedPlayersImages)
             {
@@ -56,7 +53,7 @@ namespace WPF
                     break;
                 }
             }
-            return playerImage.Source; 
+            return playerImage.Source;
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

@@ -129,11 +129,17 @@
   <data name="btnInfoHomeTeam" xml:space="preserve">
     <value>Home Team</value>
   </data>
+  <data name="btnNo" xml:space="preserve">
+    <value>No</value>
+  </data>
   <data name="btnSave" xml:space="preserve">
     <value>Save</value>
   </data>
   <data name="btnSettings" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="btnYes" xml:space="preserve">
+    <value>Yes</value>
   </data>
   <data name="cbAwayTeam" xml:space="preserve">
     <value>Guests Team</value>
@@ -143,6 +149,9 @@
   </data>
   <data name="lblCaptainText" xml:space="preserve">
     <value>CAPITAN:</value>
+  </data>
+  <data name="lblCloseTxt" xml:space="preserve">
+    <value>Do u want close the app?</value>
   </data>
   <data name="lblContestText" xml:space="preserve">
     <value>Gender</value>
@@ -179,6 +188,9 @@
   </data>
   <data name="lblPointsText" xml:space="preserve">
     <value>POINTS:</value>
+  </data>
+  <data name="lblPositionText" xml:space="preserve">
+    <value>POSITION:</value>
   </data>
   <data name="lblResolutionText" xml:space="preserve">
     <value>Resolution</value>

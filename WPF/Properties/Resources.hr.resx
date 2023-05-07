@@ -129,11 +129,17 @@
   <data name="btnInfoHomeTeam" xml:space="preserve">
     <value>Domaci info</value>
   </data>
+  <data name="btnNo" xml:space="preserve">
+    <value>Ne</value>
+  </data>
   <data name="btnSave" xml:space="preserve">
     <value>Spremi</value>
   </data>
   <data name="btnSettings" xml:space="preserve">
     <value>Postavke</value>
+  </data>
+  <data name="btnYes" xml:space="preserve">
+    <value>Da</value>
   </data>
   <data name="cbAwayTeam" xml:space="preserve">
     <value>Gosti</value>
@@ -143,6 +149,9 @@
   </data>
   <data name="lblCaptainText" xml:space="preserve">
     <value>KAPETAN:</value>
+  </data>
+  <data name="lblCloseTxt" xml:space="preserve">
+    <value>Zelite li zatvoriti aplikaciju?</value>
   </data>
   <data name="lblContestText" xml:space="preserve">
     <value>Spol</value>
@@ -179,6 +188,9 @@
   </data>
   <data name="lblPointsText" xml:space="preserve">
     <value>BODOVI:</value>
+  </data>
+  <data name="lblPositionText" xml:space="preserve">
+    <value>POZICIJA:</value>
   </data>
   <data name="lblResolutionText" xml:space="preserve">
     <value>Rezolucija</value>

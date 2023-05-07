@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace WPF
 {
-    /// <summary>
-    /// Interaction logic for TeamInfo.xaml
-    /// </summary>
+    
     public partial class TeamInfo : Window
     {
         public TeamInfo()
