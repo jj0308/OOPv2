@@ -231,6 +231,9 @@ namespace WPF
                 string[] data = line.Split(' ');
                 var countryHome = data[0];
                 var fifa_code = data[1].Substring(1, data[1].Length - 2);
+               
+
+
                 GetDataPerMatch(fifa_code, countryHome);
             }
         }
@@ -251,8 +254,9 @@ namespace WPF
 
                 GetHomeTeam(matchData, country);
                 homeCountry = country + $" (" + fifa_code + $")";
+                cbHomeTeam.SelectedItem = homeCountry;
                 cbAwayTeam.Items.Clear();
-
+                
                 GetOpponentTeams(matchData, country);
             }
             catch (Exception ex)
@@ -269,7 +273,7 @@ namespace WPF
                 StartingEleven = soccerMatches[0].HomeTeamStatistics.StartingEleven.ToList(),
                 MatchPlayed = new List<MatchPlayed>()
             };
-           
+        
 
             foreach (var sM in soccerMatch)
             {
@@ -280,26 +284,26 @@ namespace WPF
                     match.HomeTeamCountry = sM.HomeTeamCountry;
                     match.HomePlayers = GetPlayerEvents(sM.HomeTeamStatistics.StartingEleven.ToList(), sM.HomeTeamEvents);
                     match.HomesGoals = sM.HomeTeam.Goals;
-                }
-                else
-                {
-                    match.AwayTeamCountry = sM.HomeTeamCountry;
-                    match.AwaysPlayers = GetPlayerEvents(sM.HomeTeamStatistics.StartingEleven.ToList(), sM.HomeTeamEvents);
-                    match.AwaysGoals = sM.HomeTeam.Goals;
-                }
 
-                if (sM.AwayTeamCountry == country)
-                {
-                    match.HomeTeamCountry = sM.AwayTeamCountry;
-                    match.HomePlayers = GetPlayerEvents(sM.AwayTeamStatistics.StartingEleven.ToList(), sM.AwayTeamEvents);
-                    match.HomesGoals = sM.AwayTeam.Goals;
-                }
-                else
-                {
                     match.AwayTeamCountry = sM.AwayTeamCountry;
                     match.AwaysPlayers = GetPlayerEvents(sM.AwayTeamStatistics.StartingEleven.ToList(), sM.AwayTeamEvents);
                     match.AwaysGoals = sM.AwayTeam.Goals;
                 }
+                else
+                {
+                    match.HomeTeamCountry = sM.AwayTeamCountry;
+                    match.HomePlayers = GetPlayerEvents(sM.AwayTeamStatistics.StartingEleven.ToList(), sM.AwayTeamEvents);
+                    match.HomesGoals = sM.AwayTeam.Goals;
+
+                    match.AwayTeamCountry = sM.HomeTeamCountry;
+                    match.AwaysPlayers = GetPlayerEvents(sM.HomeTeamStatistics.StartingEleven.ToList(), sM.HomeTeamEvents);
+                    match.AwaysGoals = sM.HomeTeam.Goals;
+
+                   
+                }
+            
+
+               
                 matchData.MatchPlayed.Add(match);
             }
 
@@ -358,7 +362,7 @@ namespace WPF
                     Goals = item.GoalsPerMatch.ToString(),
                     YellowCards = item.YellowCardsPerMatch.ToString()
                 });
-                SetHomePlayersToFiled(item, playerControl);
+
             }
         }
 

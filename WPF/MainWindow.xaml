@@ -55,11 +55,11 @@
             FontWeight="Medium"
             IsEditable="True"
             IsReadOnly="True"
-            Text="{x:Static lang:Resources.cbHomeTeam}"
             HorizontalContentAlignment="Left"
             Margin="0,0,20,0"
             SelectionChanged="cbHomeTeam_SelectionChanged"
-            />
+        />
+
 
         <Button
             x:Name="btnInfoHomeTeam"
