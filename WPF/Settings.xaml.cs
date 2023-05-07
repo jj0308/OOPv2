@@ -27,16 +27,53 @@ namespace WPF
         string langFile;
         string championShipFile;
         private string _filePath = System.IO.Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
+        string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        private void CheckIfFilesExits()
+        {
+
+            string langfile = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, Constants.PREF_LANG_WPF));
+            var championshipFilePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, Constants.PREF_CHAMP_WPF));
+            var resolutionPath = Constants.PREF_RESOLUTION;
+
+            if (File.Exists(langfile))
+            {
+                string[] lang = File.ReadAllLines(langfile);
+                foreach (var item in lang)
+                {
+                    cbLang.SelectedItem = item;
+                }
+            }
+            if (File.Exists(championshipFilePath))
+            {
+                string[] champ = File.ReadAllLines(championshipFilePath);
+                foreach (var item in champ)
+                {
+                    cbContest.SelectedItem = item;
+                }
+            }
+            if (File.Exists(resolutionPath))
+            {
+                string[] res = File.ReadAllLines(resolutionPath);
+                foreach (var item in res)
+                {
+                    cbResolution.SelectedItem = item;
+                }
+            }
+
+        }
         public Settings()
         {
             InitializeComponent();
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+          
             PopulateComboBoxLang();
             PopulateComboBoxContest();
             PopulateComboBoxResolution();
+            CheckIfFilesExits();
         }
 
         private void PopulateComboBoxResolution()
@@ -44,7 +81,7 @@ namespace WPF
             cbResolution.Items.Clear();
             InitializeComponent();
             cbResolution.Items.Add("1152X759");
-            cbResolution.Items.Add("1920X1080");
+            cbResolution.Items.Add("1500X800");
             cbResolution.Items.Add("Full-Screen");
         }
 

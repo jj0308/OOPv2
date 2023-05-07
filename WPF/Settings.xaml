@@ -12,11 +12,13 @@
         Loaded="Window_Loaded">
     <Grid>
         <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                <GradientStop Color="#015086" Offset="0.0" />
-                <GradientStop Color="#12c368" Offset="0.25" />
-                <GradientStop Color="#017e90" Offset="0.75" />
-                <GradientStop Color="#8ae423" Offset="1.0" />
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#7289da" Offset="0.0" />
+                <GradientStop Color="#5e6e82" Offset="0.2" />
+                <GradientStop Color="#49596b" Offset="0.4" />
+                <GradientStop Color="#344451" Offset="0.6" />
+                <GradientStop Color="#1f2e3c" Offset="0.8" />
+                <GradientStop Color="#2c2f33" Offset="1.0" />
             </LinearGradientBrush>
         </Grid.Background>
 

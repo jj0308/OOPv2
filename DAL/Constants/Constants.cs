@@ -46,12 +46,6 @@ namespace DAL.Constants
         public const string FAVTEAM_WOMEN_WPF = @"..\..\..\..\WFA\bin\Files\favTeamWoman.txt";
 
 
-        //Images
-        public const string PLAYERS_IMAGES = @"Players_images";
-        public const string PLAYERS_IMAGES_WPF = @"\WFA\bin\Debug\Players_images";
-       
-
-
 
 
         public static string GetLanguage()

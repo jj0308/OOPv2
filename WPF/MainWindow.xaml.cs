@@ -37,15 +37,46 @@ namespace WPF
         Countries selectedHomeCountry;
         Countries selectedAwayCountry;
         private string homeCountry;
+        string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
+
+      
         public MainWindow()
         {
-            //CheckIfFilesExits();
+            CheckIfFilesExits();
             SetCultureFromFile();
             InitializeComponent();
         }
 
-      
+        private void CheckIfFilesExits()
+        {
+           
+            string langfile = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, Constants.PREF_LANG_WPF));
+            var championshipFilePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, Constants.PREF_CHAMP_WPF));
+            var resolutionPath = Constants.PREF_RESOLUTION;
+
+            if (!File.Exists(langfile))
+            {
+                OpenSettingsFrom();
+            }
+            if (!File.Exists(championshipFilePath))
+            {
+                OpenSettingsFrom();
+            }
+            if (!File.Exists(resolutionPath))
+            {
+                OpenSettingsFrom();
+            }
+
+        }
+        private void OpenSettingsFrom()
+        {
+            Settings settings = new Settings();
+            settings.Show();
+            this.Close();
+        }
+
+
 
         //Postavljanje jezika iz file-a
         private void SetCultureFromFile()
@@ -53,14 +84,14 @@ namespace WPF
             try
             {
 
-                string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
                 string relativeFilePath = Constants.PREF_LANG_WPF;
-                string fullPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, relativeFilePath));
+                string langfile = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, relativeFilePath));
 
 
-                if (new FileInfo(fullPath).Length != 0)
+                if (new FileInfo(langfile).Length != 0)
                 {
-                        var lines = File.ReadAllLines(fullPath);
+                        var lines = File.ReadAllLines(langfile);
                         GetFavoriteLang(lines);
                            
                 }
@@ -97,10 +128,9 @@ namespace WPF
             try
             {
                 var resolutionPath = Constants.PREF_RESOLUTION;
-                var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                var championshipFilePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.PREF_CHAMP_WPF));
-                var favoriteMenTeamPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.FAVTEAM_MEN_WPF));
-                var favoriteWomenTeamPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDirectory, Constants.FAVTEAM_WOMEN_WPF));
+                var championshipFilePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, Constants.PREF_CHAMP_WPF));
+                var favoriteMenTeamPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, Constants.FAVTEAM_MEN_WPF));
+                var favoriteWomenTeamPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, Constants.FAVTEAM_WOMEN_WPF));
 
                 lblInfo.Content = "Fetching data";
 
@@ -239,8 +269,9 @@ namespace WPF
                 StartingEleven = soccerMatches[0].HomeTeamStatistics.StartingEleven.ToList(),
                 MatchPlayed = new List<MatchPlayed>()
             };
+            var filteder  = soccerMatch.Where(e => e.HomeTeamCountry == country || e.AwayTeamCountry == country).ToList();
 
-            foreach (var soccerMatch in soccerMatches)
+            foreach (var soccerMatch in filteder)
             {
                 var match = new MatchPlayed();
 
@@ -257,18 +288,7 @@ namespace WPF
                     match.AwaysGoals = soccerMatch.HomeTeam.Goals;
                 }
 
-                if (soccerMatch.AwayTeamCountry == country)
-                {
-                    match.HomeTeamCountry = soccerMatch.AwayTeamCountry;
-                    match.HomePlayers = GetPlayerEvents(soccerMatch.AwayTeamStatistics.StartingEleven.ToList(), soccerMatch.AwayTeamEvents);
-                    match.HomesGoals = soccerMatch.AwayTeam.Goals;
-                }
-                else
-                {
-                    match.AwayTeamCountry = soccerMatch.AwayTeamCountry;
-                    match.AwaysPlayers = GetPlayerEvents(soccerMatch.AwayTeamStatistics.StartingEleven.ToList(), soccerMatch.AwayTeamEvents);
-                    match.AwaysGoals = soccerMatch.AwayTeam.Goals;
-                }
+                
                 matchData.MatchPlayed.Add(match);
             }
 
@@ -575,35 +595,34 @@ namespace WPF
             }
         }
 
-        //Popunjavanje Team Info prozora
+        //popunjavanje 
         private TeamInfo GetTeamStatistics(string country)
         {
+            ///iz svih drzava izvucemo stattistiku Francuska ima 19 poena??????
             TeamInfo teamInfo = new TeamInfo();
-            foreach (var item in countriesAll)
+            foreach (var team in countriesAll)
             {
-                if (item.Country == country)
+                if (team.Country == country)
                 {
-                    teamInfo.lblCountry.Content = item.Country;
-                    teamInfo.lblWins.Content = item.Wins;
-                    teamInfo.lblDraws.Content = item.Draws;
-                    teamInfo.lblGamesPlayed.Content = item.GamesPlayed;
-                    teamInfo.lblPoints.Content = item.Points;
-                    teamInfo.lblGoalsFor.Content = item.GoalsFor;
-                    teamInfo.lblGoalsAgainst.Content = item.GoalsAgainst;
-                    teamInfo.lblGoalsDifferences.Content = item.GoalDifferential;
+                    teamInfo.lblCountry.Content = team.Country;
+                    teamInfo.lblWins.Content = team.Wins;
+                    teamInfo.lblDraws.Content = team.Draws;
+                    teamInfo.lblGamesPlayed.Content = team.GamesPlayed;
+                    teamInfo.lblPoints.Content = team.Points;
+                    teamInfo.lblGoalsFor.Content = team.GoalsFor;
+                    teamInfo.lblGoalsAgainst.Content = team.GoalsAgainst;
+                    teamInfo.lblGoalsDifferences.Content = team.GoalDifferential;
                 }
             }
             return teamInfo;
         }
 
-        //Settings
+       
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            Settings settings = new Settings();
-            settings.Show();
-            this.Close();
-            
+            OpenSettingsFrom();
         }
+
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
