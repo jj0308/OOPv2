@@ -15,7 +15,7 @@ namespace DAL.Constants
         public const string FilePath = "RankingsReport.pdf";
 
         public const char DEL = '|';
-
+        public const char DELX = 'X';
         public const string HR = "hr";
         public const string EN = "en";
         public const string MEN = "men";

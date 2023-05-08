@@ -10,64 +10,67 @@ namespace DAL.Model
     public class SoccerMatch : IComparable<SoccerMatch>
     {
         [JsonProperty("venue")]
-        public string Venue { get; set; }
+        public string? Venue  { get; set; }
 
         [JsonProperty("location")]
-        public string Location { get; set; }
+        public string? Location { get; set; }
 
         [JsonProperty("status")]
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         [JsonProperty("time")]
-        public string Time { get; set; }
+        public string? Time { get; set; }
 
         [JsonProperty("fifa_id")]
-        public string FifaId { get; set; }
+        public string? FifaId { get; set; }
 
         [JsonProperty("attendance")]
-        public string Attendance { get; set; }
+        public string? Attendance { get; set; }
 
         [JsonProperty("officials")]
-        public List<string> Officials { get; set; }
+        public List<string>? Officials { get; set; }
 
         [JsonProperty("stage_name")]
-        public string StageName { get; set; }
+        public string? StageName { get; set; }
 
         [JsonProperty("home_team_country")]
-        public string HomeTeamCountry { get; set; }
+        public string? HomeTeamCountry { get; set; }
 
         [JsonProperty("away_team_country")]
-        public string AwayTeamCountry { get; set; }
+        public string? AwayTeamCountry { get; set; }
 
         [JsonProperty("datetime")]
-        public DateTime Datetime { get; set; }
+        public DateTime? Datetime { get; set; }
 
         [JsonProperty("winner")]
-        public string Winner { get; set; }
+        public string? Winner { get; set; }
 
         [JsonProperty("winner_code")]
-        public string WinnerCode { get; set; }
+        public string? WinnerCode { get; set; }
 
         [JsonProperty("home_team")]
-        public Team HomeTeam { get; set; }
+        public Team? HomeTeam { get; set; }
 
         [JsonProperty("away_team")]
-        public Team AwayTeam { get; set; }
+        public Team? AwayTeam { get; set; }
 
         [JsonProperty("home_team_events")]
-        public List<TeamEvent> HomeTeamEvents { get; set; }
+        public List<TeamEvent>? HomeTeamEvents { get; set; }
 
         [JsonProperty("away_team_events")]
-        public List<TeamEvent> AwayTeamEvents { get; set; }
+        public List<TeamEvent>? AwayTeamEvents { get; set; }
 
         [JsonProperty("home_team_statistics")]
-        public TeamStatistics HomeTeamStatistics { get; set; }
+        public TeamStatistics? HomeTeamStatistics { get; set; }
 
         [JsonProperty("away_team_statistics")]
-        public TeamStatistics AwayTeamStatistics { get; set; }
+        public TeamStatistics? AwayTeamStatistics { get; set; }
+
+  
 
 
-        
+
+
 
 
 

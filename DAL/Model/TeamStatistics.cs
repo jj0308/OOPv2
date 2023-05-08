@@ -55,10 +55,10 @@ namespace DAL.Model
         public long Tackles { get; set; }
 
         [JsonProperty("clearances")]
-        public long Clearances { get; set; }
+        public long? Clearances { get; set; }
 
         [JsonProperty("yellow_cards")]
-        public long YellowCards { get; set; }
+        public long? YellowCards { get; set; }
 
         [JsonProperty("red_cards")]
         public long RedCards { get; set; }
@@ -77,5 +77,8 @@ namespace DAL.Model
 
         [JsonProperty("goals")]
         public int Goals { get; set; }
+        [JsonProperty("home_team_statistics_clearances")]
+        public long HomeTeamStatisticsClearances { get; set; }
+
     }
 }

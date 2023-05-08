@@ -12,6 +12,7 @@ namespace DAL.Repo
 {
     public class WCREPO : IWCREPO
     {
+
         private Task<List<T>> GetDataAsync<T>(string url)
         {
             return Task.Run(() =>
