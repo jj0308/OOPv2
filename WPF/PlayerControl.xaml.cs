@@ -39,8 +39,10 @@ namespace WPF
         private ImageSource GetImageIfExists(Player player)
         {
             var playerName = player.Name.ToLower();
-            string pictureDirectory = @"C:\Users\JureJukić\source\repos\jj0308\OOPv2\WFA\bin\Debug\net6.0-windows\Images";
+            string pictureDirectory = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,Constants.IMAGES);
+
             List<string> savedPlayersImages = Directory.GetFiles(pictureDirectory).ToList();
+
 
             foreach (var item in savedPlayersImages)
             {
@@ -55,6 +57,7 @@ namespace WPF
             }
             return imgPlayer.Source;
         }
+
 
 
         private void UserControl_MouseDoubleClick(object sender, MouseButtonEventArgs e)

@@ -13,6 +13,7 @@ using DAL.Model;
 using DAL;
 
 
+
 namespace WFA
 {
     public partial class PlayerControl : UserControl
@@ -83,7 +84,7 @@ namespace WFA
                 pbPlayerImage.Image = playerNewImage;
 
                 string currentDirectory = Directory.GetCurrentDirectory();
-                string folderPath = Path.Combine(currentDirectory, "Images");
+                string folderPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DAL.Constants.Constants.IMAGES);
                 string settingNewImageName = Path.Combine(folderPath, $"{imageName}{imageExtension}");
 
 

@@ -9,17 +9,21 @@
         Height="400"
         Width="300">
 
-    <Window.Triggers>
-        <EventTrigger RoutedEvent="Window.Loaded">
-            <BeginStoryboard>
-                <Storyboard>
-                    <DoubleAnimation Storyboard.TargetProperty="Width" From="0" To="300" Duration="0:0:0.5" FillBehavior="HoldEnd" AutoReverse="False" />
-                    <DoubleAnimation Storyboard.TargetProperty="Height" From="0" To="400" Duration="0:0:0.8" FillBehavior="HoldEnd" AutoReverse="False"/>
-                </Storyboard>
-            </BeginStoryboard>
-        </EventTrigger>
-    </Window.Triggers>
+  
     <Grid>
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Grid.Loaded">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                    Storyboard.TargetProperty="Opacity" From="0" To="1"
+                                    Duration="0:0:0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Grid.Triggers>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="#7289da" Offset="0.0" />

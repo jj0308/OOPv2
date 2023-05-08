@@ -45,6 +45,8 @@ namespace DAL.Constants
         public const string FAVTEAM_MEN_WPF = @"..\..\..\..\WFA\bin\Files\favTeamMen.txt";
         public const string FAVTEAM_WOMEN_WPF = @"..\..\..\..\WFA\bin\Files\favTeamWoman.txt";
 
+        public const string IMAGES = @"..\..\..\..\Imagesforall";
+
 
 
 

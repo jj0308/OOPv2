@@ -38,6 +38,8 @@ namespace WPF
         Countries selectedAwayCountry;
         private string homeCountry;
         string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        private string countrycb;
+        private string codecb;
 
 
       
@@ -151,7 +153,7 @@ namespace WPF
                         {
                             SetSettings.settings.Gender = Constants.MEN;
                             var favoriteMenTeamLines = File.ReadAllLines(favoriteMenTeamPath);
-                            await GetCountriesFromFile(Constants.COUNTRYMEN);
+                            await GetCountriesFromFile();
                             GetFavoriteTeamFromFile(favoriteMenTeamLines);
                         }
                     }
@@ -161,7 +163,7 @@ namespace WPF
                         {
                             SetSettings.settings.Gender = Constants.WOMEN;
                             var favoriteWomenTeamLines = File.ReadAllLines(favoriteWomenTeamPath);
-                            await GetCountriesFromFile(Constants.COUNTRYWOMEN);
+                            await GetCountriesFromFile();
                             GetFavoriteTeamFromFile(favoriteWomenTeamLines);
                         }
                     }
@@ -205,7 +207,7 @@ namespace WPF
      
 
         //Dohvat timova
-        private async Task GetCountriesFromFile(string path)
+        private async Task GetCountriesFromFile()
         {
             try
             {
@@ -215,7 +217,14 @@ namespace WPF
                 {
                     cbHomeTeam.Items.Add(item);
                 }
-                lblInfo.Content = string.Empty;
+
+                var matchingCountry = cbHomeTeam.Items.OfType<Countries>()
+                       .FirstOrDefault(c => c.Country == countrycb && c.FifaCode == codecb);
+
+                if (matchingCountry != null)
+                {
+                    cbHomeTeam.SelectedItem = matchingCountry;
+                }
             }
             catch (Exception ex)
             {
@@ -230,10 +239,16 @@ namespace WPF
             {
                 string[] data = line.Split(' ');
                 var countryHome = data[0];
+
+                //micemo zagrade
                 var fifa_code = data[1].Substring(1, data[1].Length - 2);
+
                
+                countrycb = countryHome;
+                codecb = fifa_code;
 
-
+               
+              
                 GetDataPerMatch(fifa_code, countryHome);
             }
         }
@@ -253,7 +268,7 @@ namespace WPF
                 matchData = GetMatchData(soccerMatch, country);
 
                 GetHomeTeam(matchData, country);
-                homeCountry = country + $" (" + fifa_code + $")";
+               
 
                 cbAwayTeam.Items.Clear();
                 
@@ -265,7 +280,7 @@ namespace WPF
             }
         }
 
-        //Dohvat svih utakmica za odabrani tim
+        //Dohvat svih utakmica koje je tim odigra i prvih 11
         private MatchData GetMatchData(List<SoccerMatch> soccerMatches, string country)
         {
             var matchData = new MatchData
@@ -474,7 +489,7 @@ namespace WPF
 
 
 
-        //Dohvat suparničkog tima
+        //ode punimo combobox od away tima
         private void GetOpponentTeams(MatchData matchData, string country)
         {
             awayCountries.Clear();
