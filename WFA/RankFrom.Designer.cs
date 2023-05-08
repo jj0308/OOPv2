@@ -286,6 +286,7 @@
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            ControlBox = false;
             Controls.Add(tabControl);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;

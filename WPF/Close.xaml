@@ -24,11 +24,20 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Label Name="lblCloseTxt" Foreground="White" Grid.Row="0" Content="{x:Static lang:Resources.lblCloseTxt}" HorizontalAlignment="Center" Margin="0,30,0,66" FontWeight="Bold" FontSize="18" Grid.RowSpan="2"/>
+        <Label Name="lblCloseTxt" Foreground="White" Grid.Row="0" Content="{x:Static lang:Resources.lblCloseTxt}" HorizontalAlignment="Center" Margin="0,30,0,0" FontWeight="Bold" FontSize="18"/>
         <TextBlock Grid.Row="1" Name="MessageText" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="16"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="93,117,0,32" Grid.RowSpan="2">
-            <Button Name="btnYes" Width="100" Content="{x:Static lang:Resources.btnYes}" Click="BtnYes_Click" IsDefault="True" Margin="5" FontSize="16"/>
-            <Button Name="btnNo" Width="100" Content="{x:Static lang:Resources.btnNo}" Click="BtnNo_Click" IsCancel="True" Margin="5" FontSize="16"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+            <Button Name="btnYes" Width="100" Height="28" Content="{x:Static lang:Resources.btnYes}" Click="BtnYes_Click" IsDefault="True" Margin="5" FontSize="16"/>
+            <Button Name="btnNo" Width="100" Height="28" Content="{x:Static lang:Resources.btnNo}" Click="BtnNo_Click" IsCancel="True" Margin="5" FontSize="16" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.068"/>
+                        <RotateTransform Angle="-0.413"/>
+                        <TranslateTransform Y="0.06"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
         </StackPanel>
     </Grid>
 

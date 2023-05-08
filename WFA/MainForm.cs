@@ -144,9 +144,10 @@ namespace WFA
         {
             foreach (var line in lines)
             {
-                string[] data = line.Split(' ');
-                var country = data[0];
-                var fifa_code = data[1].Substring(1, data[1].Length - 2);
+                string[] data = line.Split('(');
+                var country = data[0].Substring(0, data[0].Length - 1);
+                var fifa_code = data[1].Substring(0, data[1].Length - 1);
+                
                 foreach (var item in countries)
                 {
                     if (item.Country.Equals(country))
@@ -387,6 +388,6 @@ namespace WFA
             }
         }
 
-       
+
     }
 }

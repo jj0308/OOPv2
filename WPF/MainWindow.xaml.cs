@@ -26,7 +26,7 @@ namespace WPF
 {
     public partial class MainWindow : Window
     {
-        private const char DEL = 'X';
+       
         private List<SoccerMatch> soccerMatch = new List<SoccerMatch>();
         private List<Countries> countriesAll = new List<Countries>();
         private List<Countries> awayCountries = new List<Countries>();
@@ -38,11 +38,12 @@ namespace WPF
         Countries selectedAwayCountry;
         private string homeCountry;
         string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        private string countrycb;
-        private string codecb;
+        private string cbCant;
+        private string cbCode;
 
 
-      
+
+
         public MainWindow()
         {
             CheckIfFilesExits();
@@ -134,7 +135,10 @@ namespace WPF
                 var favoriteMenTeamPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, Constants.FAVTEAM_MEN_WPF));
                 var favoriteWomenTeamPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(currentDirectory, Constants.FAVTEAM_WOMEN_WPF));
 
-                lblInfo.Content = "Fetching data";
+                
+
+                lblInfo.Content = SetSettings.settings.Language == "hr" ? "Dohvacam podatke" : "Fetching data";
+
 
                 if (File.Exists(resolutionPath))
                 {
@@ -155,6 +159,7 @@ namespace WPF
                             var favoriteMenTeamLines = File.ReadAllLines(favoriteMenTeamPath);
                             await GetCountriesFromFile();
                             GetFavoriteTeamFromFile(favoriteMenTeamLines);
+                           
                         }
                     }
                     else
@@ -165,9 +170,12 @@ namespace WPF
                             var favoriteWomenTeamLines = File.ReadAllLines(favoriteWomenTeamPath);
                             await GetCountriesFromFile();
                             GetFavoriteTeamFromFile(favoriteWomenTeamLines);
+                            
                         }
                     }
                 }
+
+                lblInfo.Content = "";
             }
             catch (Exception ex)
             {
@@ -192,7 +200,7 @@ namespace WPF
                 }
                 else
                 {
-                    string[] details = line.Split(DEL);
+                    string[] details = line.Split(Constants.DELX);
                     int x, y;
 
                     if (int.TryParse(details[0], out x) && int.TryParse(details[1], out y))
@@ -218,13 +226,7 @@ namespace WPF
                     cbHomeTeam.Items.Add(item);
                 }
 
-                var matchingCountry = cbHomeTeam.Items.OfType<Countries>()
-                       .FirstOrDefault(c => c.Country == countrycb && c.FifaCode == codecb);
-
-                if (matchingCountry != null)
-                {
-                    cbHomeTeam.SelectedItem = matchingCountry;
-                }
+                
             }
             catch (Exception ex)
             {
@@ -237,17 +239,12 @@ namespace WPF
         {
             foreach (var line in lines)
             {
-                string[] data = line.Split(' ');
-                var countryHome = data[0];
+                string[] data = line.Split('(');
+                var countryHome = data[0].Substring(0, data[0].Length - 1);
+                var fifa_code = data[1].Substring(0, data[1].Length - 1);
 
-                //micemo zagrade
-                var fifa_code = data[1].Substring(1, data[1].Length - 2);
-
-               
-                countrycb = countryHome;
-                codecb = fifa_code;
-
-               
+                cbCant = countryHome;
+                cbCode = fifa_code;
               
                 GetDataPerMatch(fifa_code, countryHome);
             }
@@ -260,12 +257,18 @@ namespace WPF
             {
                 WCREPO wCREPO = new WCREPO();
                 string link = Constants.GetMatchesByGenderWPF() + fifa_code;
-             
-
-
                 soccerMatch = await wCREPO.GetStats(link);
 
                 matchData = GetMatchData(soccerMatch, country);
+                var matchingCountry = cbHomeTeam.Items.OfType<Countries>()
+                 .FirstOrDefault(c => c.Country == cbCant && c.FifaCode == cbCode);
+
+                if (cbHomeTeam.SelectedItem == null)
+                {
+                    cbHomeTeam.SelectedItem = matchingCountry;
+                }
+
+
 
                 GetHomeTeam(matchData, country);
                
@@ -273,6 +276,7 @@ namespace WPF
                 cbAwayTeam.Items.Clear();
                 
                 GetOpponentTeams(matchData, country);
+             
             }
             catch (Exception ex)
             {
@@ -331,7 +335,7 @@ namespace WPF
         {
             var playersWithEvents = playersList;
             var var = teamEvents;
-            var filteredTeamEvents = teamEvents.Where(e => e.TypeOfEvent == "yellow-card" || e.TypeOfEvent == "goal-penalty" || e.TypeOfEvent == "goal").ToList();
+            var filteredTeamEvents = teamEvents.Where(e => e.TypeOfEvent == Constants.YellowCard || e.TypeOfEvent == Constants.GoalPenalty || e.TypeOfEvent == Constants.Goal).ToList();
 
           
 

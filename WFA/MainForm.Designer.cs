@@ -91,10 +91,11 @@
             btncClose.UseVisualStyleBackColor = true;
             btncClose.Click += btncClose_Click;
             // 
-            // Main
+            // MainForm
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            ControlBox = false;
             Controls.Add(btncClose);
             Controls.Add(lblInfo);
             Controls.Add(btnRank);
@@ -103,7 +104,7 @@
             Controls.Add(flwFavPlayer);
             Controls.Add(flpPlayers);
             Controls.Add(cbTeams);
-            Name = "Main";
+            Name = "MainForm";
             Load += Main_Load;
             ResumeLayout(false);
             PerformLayout();
