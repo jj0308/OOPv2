@@ -1,14 +1,11 @@
 ﻿using DAL;
+using DAL.Constants;
 using DAL.Model;
-using System.Text.RegularExpressions;
+using DAL.Repo;
 using iText.Kernel.Pdf;
-using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using Document = iText.Layout.Document;
-using System.Windows.Forms;
-using DAL.Repo;
-using DAL.Constants;
 
 namespace WFA
 {
@@ -335,19 +332,25 @@ namespace WFA
                     var document = new Document(pdf);
 
                     // Add title
-                    var title = new Paragraph("Soccer Rankings Report")
+                    string titleMsg = Constants.GetLanguage() == "hr" ? "Izvješće o nogometnoj ljestvici" : "Footbal Rankings Report";
+                    string playerMsg = Constants.GetLanguage() == "hr" ? "Igraci" : "Players";
+                    string nameMsg = Constants.GetLanguage() == "hr" ? "Ime" : "Name";
+                    string appearancesMsg = Constants.GetLanguage() == "hr" ? "Nastupi" : "Appearances";
+                    string goalsMsg = Constants.GetLanguage() == "hr" ? "Golovi" : "Goals";
+                    string ycMsg = Constants.GetLanguage() == "hr" ? "Zuti kartoni" : "Yellow Cards";
+                    var title = new Paragraph(titleMsg)
                         .SetTextAlignment(TextAlignment.CENTER)
                         .SetFontSize(24);
                     document.Add(title);
 
                     if (tabControl.SelectedTab == tabPlayers)
                     {
-                        document.Add(new Paragraph("Players").SetFontSize(18));
+                        document.Add(new Paragraph(playerMsg).SetFontSize(18));
                         var playersTable = new Table(UnitValue.CreatePercentArray(new float[] { 25, 25, 25, 25 }));
-                        playersTable.AddHeaderCell("Name");
-                        playersTable.AddHeaderCell("Appearances");
-                        playersTable.AddHeaderCell("Goals");
-                        playersTable.AddHeaderCell("Yellow Cards");
+                        playersTable.AddHeaderCell(nameMsg);
+                        playersTable.AddHeaderCell(appearancesMsg);
+                        playersTable.AddHeaderCell(goalsMsg);
+                        playersTable.AddHeaderCell(ycMsg);
 
 
                         foreach (var player in players)
@@ -364,12 +367,17 @@ namespace WFA
                     }
                     if (tabControl.SelectedTab == tabMatches)
                     {
-                        document.Add(new Paragraph("Matches").SetFontSize(18));
+                        string matchesMsg = Constants.GetLanguage() == "hr" ? "Utakmice" : "Matches";
+                        string venueMsg = Constants.GetLanguage() == "hr" ? "Mjesto" : "Venue";
+                        string attendanceMsg = Constants.GetLanguage() == "hr" ? "Posjećenost" : "Attendance";
+                        string homeTeam = Constants.GetLanguage() == "hr" ? "Domaci tim" : "Home Team";
+                        string awayTeam = Constants.GetLanguage() == "hr" ? "Gostujuci tim" : "Away Team";
+                        document.Add(new Paragraph(matchesMsg).SetFontSize(18));
                         var matchesTable = new Table(UnitValue.CreatePercentArray(new float[] { 25, 25, 25, 25 }));
-                        matchesTable.AddHeaderCell("Venue");
-                        matchesTable.AddHeaderCell("Attendance");
-                        matchesTable.AddHeaderCell("Home Team");
-                        matchesTable.AddHeaderCell("Away Team");
+                        matchesTable.AddHeaderCell(venueMsg);
+                        matchesTable.AddHeaderCell(attendanceMsg);
+                        matchesTable.AddHeaderCell(homeTeam);
+                        matchesTable.AddHeaderCell(awayTeam);
 
 
                         foreach (var match in matches)

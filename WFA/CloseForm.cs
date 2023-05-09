@@ -16,7 +16,7 @@ namespace WFA
     {
         public CloseForm()
         {
-            SetSettings.SetCulture(File.ReadLines(Constants.PREF_LANG).FirstOrDefault());
+            SetSettings.SetCulture(Constants.GetLanguage());
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             //ovo sam stavio da mogu havatati key eveente 
@@ -36,12 +36,12 @@ namespace WFA
         {
             base.OnKeyDown(e);
 
-            
+
             if (e.KeyCode == Keys.Enter)
             {
                 Application.Exit();
             }
-           
+
             if (e.KeyCode == Keys.Escape)
             {
                 this.Close();

@@ -1,4 +1,6 @@
-﻿namespace WFA
+﻿using WFA.Properties;
+
+namespace WFA
 {
     partial class CloseForm
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CloseForm));
             lblMsg = new Label();
             btnYes = new Button();
             btnNo = new Button();
@@ -35,27 +38,30 @@
             // 
             // lblMsg
             // 
+            resources.ApplyResources(lblMsg, "lblMsg");
             lblMsg.AutoSize = true;
             lblMsg.ImeMode = ImeMode.NoControl;
             lblMsg.Location = new Point(71, 67);
             lblMsg.Name = "lblMsg";
             lblMsg.Size = new Size(211, 20);
             lblMsg.TabIndex = 1;
-            lblMsg.Text = "Do you want to close the app?";
+           
             // 
             // btnYes
             // 
+            resources.ApplyResources(btnYes, "btnYes");
             btnYes.ImeMode = ImeMode.NoControl;
             btnYes.Location = new Point(71, 121);
             btnYes.Name = "btnYes";
             btnYes.Size = new Size(94, 29);
             btnYes.TabIndex = 2;
-            btnYes.Text = "Yes";
+        
             btnYes.UseVisualStyleBackColor = true;
             btnYes.Click += btnYes_Click;
             // 
             // btnNo
             // 
+            resources.ApplyResources(btnNo, "btnNo");
             btnNo.ImeMode = ImeMode.NoControl;
             btnNo.Location = new Point(188, 121);
             btnNo.Name = "btnNo";

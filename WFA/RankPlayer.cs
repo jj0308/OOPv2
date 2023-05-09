@@ -91,7 +91,7 @@ namespace WFA
 
         private string GetImagesFolderPath()
         {
-            string currentDirectory = Directory.GetCurrentDirectory();
+            
             string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,Constants.IMAGES);
             return folderPath;
         }

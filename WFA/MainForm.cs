@@ -61,7 +61,7 @@ namespace WFA
             }
 
 
-            //dohvat svih država (reprezentacija)
+            //dohvat svih repki u combobox
             try
             {
                 WCREPO wcrepo = new WCREPO();
@@ -78,7 +78,7 @@ namespace WFA
             }
 
 
-            //Provjera text file - a ako postoji zapis o omiljenom timu i omiljeni igraèima
+            //Gledamo ima li file i jel ima sta u njemu
 
             try
             {
@@ -119,6 +119,7 @@ namespace WFA
                     ShirtNumber = int.Parse(details[2]),
                     Position = details[3],
                     FavouritePlayer = true
+                    
                 });
                 flwFavPlayer.Controls.Add(playerControl);
             }
@@ -144,6 +145,7 @@ namespace WFA
         {
             foreach (var line in lines)
             {
+                //ovo sam mora ovako zbog reprezentcija tipa Costa Rica CRC
                 string[] data = line.Split('(');
                 var country = data[0].Substring(0, data[0].Length - 1);
                 var fifa_code = data[1].Substring(0, data[1].Length - 1);
@@ -237,26 +239,24 @@ namespace WFA
         {
             try
             {
+                string msg = Constants.GetLanguage() == "hr" ? "Dodali ste veæ 3 omiljena igraèa!" : "You have already added 3 favorite players!";
                 List<PlayerControl> favoritPlayers = GetSelectedPlayersToFavorit(flpPlayers);
-                if (!CountOfMaximumFavoritPlayers(favoritPlayers))
-                {
-                    MessageBox.Show("Dozvoljeno je dodati samo 3 omiljena igraèa!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
+             
                     if (flwFavPlayer.Controls.Count < 3)
                     {
                         MovingSelectedPlayersToFavoritPanel(favoritPlayers, flpPlayers, flwFavPlayer);
                     }
                     else
                     {
-                        MessageBox.Show("Dodali ste veæ 3 omiljena igraèa!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        
+
+                        MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         foreach (PlayerControl item in favoritPlayers)
                         {
                             item.UnselectPlayer();
                         }
                     }
-                }
+                
             }
             catch (Exception ex)
             {
@@ -275,21 +275,9 @@ namespace WFA
             e.Effect = DragDropEffects.Move;
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///Drag drop methode
-        private bool CountOfMaximumFavoritPlayers(List<PlayerControl> favoritPlayers)
-        {
-            if (favoritPlayers.Count > 3)
-            {
-                foreach (PlayerControl item in favoritPlayers)
-                {
-                    item.UnselectPlayer();
-                }
-                return false;
-            }
-            return true;
-        }
+        ///Drag drop metode
 
-        //Dodavanje igraèa u listu igraèa Favorita
+        //Dodavanje igraèa u listu  Favorita
         private List<PlayerControl> GetSelectedPlayersToFavorit(FlowLayoutPanel flpAllTeamPlayers)
         {
             List<PlayerControl> favoritPlayersToList = new List<PlayerControl>();
@@ -343,19 +331,33 @@ namespace WFA
             closeForm.ShowDialog();
         }
 
+
+        //Spremanje igraca i momcadi i otvaranje rank forme
         private void btnRank_Click(object sender, EventArgs e)
         {
-            selectedCountry = cbTeams.SelectedItem as Countries;
-            string fifaCode = selectedCountry.FifaCode;
-            string country = selectedCountry.Country;
+            if (flwFavPlayer.Controls.Count != 3)
+            {
+                
+            
+                string msg = Constants.GetLanguage() == "hr" ? "Potrebbno je odabrati 3 omiljena igraca" : "It is necessary to choose 3 favorite players";
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                selectedCountry = cbTeams.SelectedItem as Countries;
+                string fifaCode = selectedCountry.FifaCode;
+                string country = selectedCountry.Country;
 
-            SaveChampionshipData(championShipFile, cbTeams.SelectedItem as Countries);
-            SaveFavoritePlayersData(favoritePlayersFile, flwFavPlayer.Controls.Cast<PlayerControl>().ToList());
+                SaveChampionshipData(championShipFile, cbTeams.SelectedItem as Countries);
+                SaveFavoritePlayersData(favoritePlayersFile, flwFavPlayer.Controls.Cast<PlayerControl>().ToList());
 
-            RankFrom rankForm = new RankFrom(country, fifaCode);
+                RankFrom rankForm = new RankFrom(country, fifaCode);
 
-            rankForm.Show();
-            this.Hide();
+                rankForm.Show();
+                this.Hide();
+            }
+
+           
         }
 
 

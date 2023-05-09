@@ -43,7 +43,48 @@ namespace WFA
 
             lblNumber.Text = player.ShirtNumber.ToString();
             lblPosition.Text = player.Position;
+                Image img = GetSavedImageIfExsists(player);
+            if (img != null)
+            {
+                pbPlayerImage.Image = img;
+                pbPlayerImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
 
+        }
+        private Image GetSavedImageIfExsists(Player player)
+        {
+            try
+            {
+                string imagesFolderPath = GetImagesFolderPath();
+                List<string> savedPlayersImages = Directory.GetFiles(imagesFolderPath).ToList();
+
+                var playerName = player.Name.ToLower();
+
+                foreach (var item in savedPlayersImages)
+                {
+                    var playerNameFromImage = Path.GetFileNameWithoutExtension(item).ToLower();
+                    var imageExtension = item.Substring(item.LastIndexOf('.')).ToLower();
+
+                    if (playerName == playerNameFromImage)
+                    {
+                        return Image.FromFile(item);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            return null;
+        }
+
+
+        private string GetImagesFolderPath()
+        {
+
+            string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DAL.Constants.Constants.IMAGES);
+            return folderPath;
         }
 
         public bool Equals(Player player)
